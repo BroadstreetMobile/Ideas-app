@@ -19,6 +19,10 @@
 		951070BD15F69D9C00E8E336 /* Ideas.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 951070BB15F69D9C00E8E336 /* Ideas.xcdatamodeld */; };
 		951070C015F69D9C00E8E336 /* BDSIMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 951070BF15F69D9C00E8E336 /* BDSIMasterViewController.m */; };
 		951070C315F69D9C00E8E336 /* BDSIDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 951070C215F69D9C00E8E336 /* BDSIDetailViewController.m */; };
+		951070CA15F69E8E00E8E336 /* Bx57.png in Resources */ = {isa = PBXBuildFile; fileRef = 951070C915F69E8E00E8E336 /* Bx57.png */; };
+		951070CD15F6A0C500E8E336 /* 5-Pillars_highrez_320.png in Resources */ = {isa = PBXBuildFile; fileRef = 951070CC15F6A0C500E8E336 /* 5-Pillars_highrez_320.png */; };
+		951070D015F6D83B00E8E336 /* B-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 951070CE15F6D83B00E8E336 /* B-icon.png */; };
+		951070D115F6D83B00E8E336 /* B-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 951070CF15F6D83B00E8E336 /* B-icon@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +44,10 @@
 		951070BF15F69D9C00E8E336 /* BDSIMasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BDSIMasterViewController.m; sourceTree = "<group>"; };
 		951070C115F69D9C00E8E336 /* BDSIDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDSIDetailViewController.h; sourceTree = "<group>"; };
 		951070C215F69D9C00E8E336 /* BDSIDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BDSIDetailViewController.m; sourceTree = "<group>"; };
+		951070C915F69E8E00E8E336 /* Bx57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Bx57.png; sourceTree = "<group>"; };
+		951070CC15F6A0C500E8E336 /* 5-Pillars_highrez_320.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "5-Pillars_highrez_320.png"; sourceTree = "<group>"; };
+		951070CE15F6D83B00E8E336 /* B-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "B-icon.png"; sourceTree = "<group>"; };
+		951070CF15F6D83B00E8E336 /* B-icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "B-icon@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +68,7 @@
 		9510709215F69D9B00E8E336 = {
 			isa = PBXGroup;
 			children = (
+				951070CB15F69FDF00E8E336 /* Images */,
 				951070A915F69D9B00E8E336 /* Ideas */,
 				951070A015F69D9B00E8E336 /* Frameworks */,
 				9510709E15F69D9B00E8E336 /* Products */,
@@ -111,6 +120,17 @@
 				951070B115F69D9B00E8E336 /* Ideas-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		951070CB15F69FDF00E8E336 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				951070CE15F6D83B00E8E336 /* B-icon.png */,
+				951070CF15F6D83B00E8E336 /* B-icon@2x.png */,
+				951070C915F69E8E00E8E336 /* Bx57.png */,
+				951070CC15F6A0C500E8E336 /* 5-Pillars_highrez_320.png */,
+			);
+			name = Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -168,6 +188,10 @@
 				951070AE15F69D9B00E8E336 /* InfoPlist.strings in Resources */,
 				951070B715F69D9C00E8E336 /* MainStoryboard_iPhone.storyboard in Resources */,
 				951070BA15F69D9C00E8E336 /* MainStoryboard_iPad.storyboard in Resources */,
+				951070CA15F69E8E00E8E336 /* Bx57.png in Resources */,
+				951070CD15F6A0C500E8E336 /* 5-Pillars_highrez_320.png in Resources */,
+				951070D015F6D83B00E8E336 /* B-icon.png in Resources */,
+				951070D115F6D83B00E8E336 /* B-icon@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -268,10 +292,13 @@
 		951070C715F69D9C00E8E336 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Ideas/Ideas-Prefix.pch";
 				INFOPLIST_FILE = "Ideas/Ideas-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -279,10 +306,13 @@
 		951070C815F69D9C00E8E336 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Ideas/Ideas-Prefix.pch";
 				INFOPLIST_FILE = "Ideas/Ideas-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -306,6 +336,7 @@
 				951070C815F69D9C00E8E336 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

@@ -28,9 +28,13 @@
         BDSIMasterViewController *controller = (BDSIMasterViewController *)masterNavigationController.topViewController;
         controller.managedObjectContext = self.managedObjectContext;
     } else {
-        UINavigationController *navigationController = (UINavigationController *)self.window.rootViewController;
-        BDSIMasterViewController *controller = (BDSIMasterViewController *)navigationController.topViewController;
-        controller.managedObjectContext = self.managedObjectContext;
+        [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleBlackTranslucent];
+        
+        UITabBarController *tabBarController = (UITabBarController *)self.window.rootViewController;
+//        UINavigationController *navigationController = (UINavigationController *)self.window.rootViewController;
+        tabBarController.navigationController.navigationBar.tintColor = [UIColor redColor];
+//        BDSIMasterViewController *controller = (BDSIMasterViewController *)navigationController.topViewController;
+//        controller.managedObjectContext = self.managedObjectContext;
     }
     return YES;
 }
