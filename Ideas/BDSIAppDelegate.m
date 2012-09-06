@@ -19,7 +19,8 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
-    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
+    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad)
+    {
         UISplitViewController *splitViewController = (UISplitViewController *)self.window.rootViewController;
         UINavigationController *navigationController = [splitViewController.viewControllers lastObject];
         splitViewController.delegate = (id)navigationController.topViewController;
@@ -27,14 +28,6 @@
         UINavigationController *masterNavigationController = splitViewController.viewControllers[0];
         BDSIMasterViewController *controller = (BDSIMasterViewController *)masterNavigationController.topViewController;
         controller.managedObjectContext = self.managedObjectContext;
-    } else {
-        [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleBlackTranslucent];
-        
-        UITabBarController *tabBarController = (UITabBarController *)self.window.rootViewController;
-//        UINavigationController *navigationController = (UINavigationController *)self.window.rootViewController;
-        tabBarController.navigationController.navigationBar.tintColor = [UIColor redColor];
-//        BDSIMasterViewController *controller = (BDSIMasterViewController *)navigationController.topViewController;
-//        controller.managedObjectContext = self.managedObjectContext;
     }
     return YES;
 }
