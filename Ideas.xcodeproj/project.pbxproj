@@ -27,6 +27,7 @@
 		951F315B15FE8BB100C26DC3 /* Whitepaper.m in Sources */ = {isa = PBXBuildFile; fileRef = 951F315A15FE8BB100C26DC3 /* Whitepaper.m */; };
 		951F315E15FE8BB100C26DC3 /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = 951F315D15FE8BB100C26DC3 /* Event.m */; };
 		951F316115FE8C3D00C26DC3 /* BDSIWhitePaperViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 951F316015FE8C3D00C26DC3 /* BDSIWhitePaperViewController.m */; };
+		957DC7C715FF803700C66E3F /* SampleData-Whitepapers.plist in Resources */ = {isa = PBXBuildFile; fileRef = 957DC7C615FF803700C66E3F /* SampleData-Whitepapers.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +61,7 @@
 		951F315D15FE8BB100C26DC3 /* Event.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Event.m; sourceTree = "<group>"; };
 		951F315F15FE8C3D00C26DC3 /* BDSIWhitePaperViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDSIWhitePaperViewController.h; sourceTree = "<group>"; };
 		951F316015FE8C3D00C26DC3 /* BDSIWhitePaperViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDSIWhitePaperViewController.m; sourceTree = "<group>"; };
+		957DC7C615FF803700C66E3F /* SampleData-Whitepapers.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "SampleData-Whitepapers.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,6 +167,7 @@
 				951F315D15FE8BB100C26DC3 /* Event.m */,
 				951F315915FE8BB100C26DC3 /* Whitepaper.h */,
 				951F315A15FE8BB100C26DC3 /* Whitepaper.m */,
+				957DC7C615FF803700C66E3F /* SampleData-Whitepapers.plist */,
 			);
 			name = "Data Model";
 			path = ..;
@@ -229,6 +232,7 @@
 				951070CD15F6A0C500E8E336 /* 5-Pillars_highrez_320.png in Resources */,
 				951070D015F6D83B00E8E336 /* B-icon.png in Resources */,
 				951070D115F6D83B00E8E336 /* B-icon@2x.png in Resources */,
+				957DC7C715FF803700C66E3F /* SampleData-Whitepapers.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
