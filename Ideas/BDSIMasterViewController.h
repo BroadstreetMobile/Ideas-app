@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
+
 @class BDSIDetailViewController;
 
 #import <CoreData/CoreData.h>

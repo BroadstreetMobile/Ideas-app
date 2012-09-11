@@ -1,10 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1807" systemVersion="12B19" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1807" systemVersion="12A269" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="Event">
         <attribute name="timeStamp" optional="YES" attributeType="Date">
             <userInfo/>
         </attribute>
         <userInfo/>
+    </entity>
+    <entity name="Restaurant_Safety_Info" representedClassName="Restaurant_Safety_Info" syncable="YES">
+        <attribute name="establishment_name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="establishment_status" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="establishment_type" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="safety_action" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <entity name="Whitepaper" syncable="YES">
         <attribute name="thumbnail" optional="YES" attributeType="Binary" allowsExternalBinaryDataStorage="YES" syncable="YES"/>
@@ -12,7 +18,8 @@
         <attribute name="url" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Event" positionX="261" positionY="189" width="128" height="60"/>
-        <element name="Whitepaper" positionX="160" positionY="192" width="128" height="90"/>
+        <element name="Event" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="Whitepaper" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="Restaurant_Safety_Info" positionX="0" positionY="0" width="0" height="0"/>
     </elements>
 </model>

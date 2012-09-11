@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9492B75F15FF8F07006E9C2E /* Restaurant_Safety_Info.m in Sources */ = {isa = PBXBuildFile; fileRef = 9492B75E15FF8F07006E9C2E /* Restaurant_Safety_Info.m */; };
 		951070A215F69D9B00E8E336 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 951070A115F69D9B00E8E336 /* UIKit.framework */; };
 		951070A415F69D9B00E8E336 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 951070A315F69D9B00E8E336 /* Foundation.framework */; };
 		951070A615F69D9B00E8E336 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 951070A515F69D9B00E8E336 /* CoreGraphics.framework */; };
@@ -26,6 +27,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9492B75D15FF8F07006E9C2E /* Restaurant_Safety_Info.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Restaurant_Safety_Info.h; sourceTree = "<group>"; };
+		9492B75E15FF8F07006E9C2E /* Restaurant_Safety_Info.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Restaurant_Safety_Info.m; sourceTree = "<group>"; };
 		9510709D15F69D9B00E8E336 /* Ideas.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ideas.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		951070A115F69D9B00E8E336 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		951070A315F69D9B00E8E336 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -106,6 +109,8 @@
 				951070C115F69D9C00E8E336 /* BDSIDetailViewController.h */,
 				951070C215F69D9C00E8E336 /* BDSIDetailViewController.m */,
 				951070BB15F69D9C00E8E336 /* Ideas.xcdatamodeld */,
+				9492B75D15FF8F07006E9C2E /* Restaurant_Safety_Info.h */,
+				9492B75E15FF8F07006E9C2E /* Restaurant_Safety_Info.m */,
 				951070AA15F69D9B00E8E336 /* Supporting Files */,
 			);
 			path = Ideas;
@@ -207,6 +212,7 @@
 				951070BD15F69D9C00E8E336 /* Ideas.xcdatamodeld in Sources */,
 				951070C015F69D9C00E8E336 /* BDSIMasterViewController.m in Sources */,
 				951070C315F69D9C00E8E336 /* BDSIDetailViewController.m in Sources */,
+				9492B75F15FF8F07006E9C2E /* Restaurant_Safety_Info.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

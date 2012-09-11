@@ -7,6 +7,7 @@
 //
 
 #import "BDSIAppDelegate.h"
+#import "Restaurant_Safety_Info.h"
 
 #import "BDSIMasterViewController.h"
 
@@ -29,9 +30,35 @@
         BDSIMasterViewController *controller = (BDSIMasterViewController *)masterNavigationController.topViewController;
         controller.managedObjectContext = self.managedObjectContext;
     }
+    
+    NSManagedObjectContext *context = [self managedObjectContext];
+    Restaurant_Safety_Info *restaurantSafetyInfo = [NSEntityDescription
+                                                  insertNewObjectForEntityForName:@"RestaurantSafetyInfo"
+                                                  inManagedObjectContext:context];
+    
+    restaurantSafetyInfo.establishment_name = @"Fractured Prunes";
+    restaurantSafetyInfo.establishment_type = @"Shop";
+    restaurantSafetyInfo.establishment_status = @"Pass";
+    restaurantSafetyInfo.safety_action = @"Test";
+    
+    
+    Restaurant_Safety_Info *restaurantSafetyInfo1 = [NSEntityDescription
+                                                   insertNewObjectForEntityForName:@"RestaurantSafetyInfo"
+                                                   inManagedObjectContext:context];
+    restaurantSafetyInfo1.establishment_name = @"MeatLoaf";
+    restaurantSafetyInfo1.establishment_type = @"Cart";
+    restaurantSafetyInfo1.establishment_status = @"Fail";
+    restaurantSafetyInfo1.safety_action = @"Test";
+    
+
+    NSError *error;
+    if (![context save:&error]) {
+        NSLog(@"Whoops, couldn't save: %@", [error localizedDescription]);
+    }
+
     return YES;
 }
-							
+
 - (void)applicationWillResignActive:(UIApplication *)application
 {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
