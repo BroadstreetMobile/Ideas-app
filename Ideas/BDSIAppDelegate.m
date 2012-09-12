@@ -33,7 +33,7 @@
     
     NSManagedObjectContext *context = [self managedObjectContext];
     Restaurant_Safety_Info *restaurantSafetyInfo = [NSEntityDescription
-                                                  insertNewObjectForEntityForName:@"RestaurantSafetyInfo"
+                                                  insertNewObjectForEntityForName:@"Restaurant_Safety_Info"
                                                   inManagedObjectContext:context];
     
     restaurantSafetyInfo.establishment_name = @"Fractured Prunes";
@@ -43,7 +43,7 @@
     
     
     Restaurant_Safety_Info *restaurantSafetyInfo1 = [NSEntityDescription
-                                                   insertNewObjectForEntityForName:@"RestaurantSafetyInfo"
+                                                   insertNewObjectForEntityForName:@"Restaurant_Safety_Info"
                                                    inManagedObjectContext:context];
     restaurantSafetyInfo1.establishment_name = @"MeatLoaf";
     restaurantSafetyInfo1.establishment_type = @"Cart";
