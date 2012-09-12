@@ -30,6 +30,7 @@
 		95EA8E401600E015009FF5A5 /* BDSISolutionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95EA8E3F1600E015009FF5A5 /* BDSISolutionsViewController.m */; };
 		95EA8E451600E168009FF5A5 /* BDSIPassbookViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95EA8E441600E168009FF5A5 /* BDSIPassbookViewController.m */; };
 		95EA8E481600E8AD009FF5A5 /* README.markdown in Resources */ = {isa = PBXBuildFile; fileRef = 95EA8E471600E8AD009FF5A5 /* README.markdown */; };
+		95EA8E4D1600FAE4009FF5A5 /* README.markdown in Resources */ = {isa = PBXBuildFile; fileRef = 95EA8E4C1600FAE4009FF5A5 /* README.markdown */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -71,6 +72,7 @@
 		95EA8E431600E168009FF5A5 /* BDSIPassbookViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDSIPassbookViewController.h; sourceTree = "<group>"; };
 		95EA8E441600E168009FF5A5 /* BDSIPassbookViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDSIPassbookViewController.m; sourceTree = "<group>"; };
 		95EA8E471600E8AD009FF5A5 /* README.markdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.markdown; sourceTree = "<group>"; };
+		95EA8E4C1600FAE4009FF5A5 /* README.markdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.markdown; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +93,7 @@
 		9510709215F69D9B00E8E336 = {
 			isa = PBXGroup;
 			children = (
+				95EA8E4C1600FAE4009FF5A5 /* README.markdown */,
 				95EA8E301600CEAB009FF5A5 /* Data Model */,
 				951070CB15F69FDF00E8E336 /* Images */,
 				951070A915F69D9B00E8E336 /* Ideas */,
@@ -296,6 +299,7 @@
 				951070D115F6D83B00E8E336 /* B-icon@2x.png in Resources */,
 				957DC7C715FF803700C66E3F /* SampleData-Whitepapers.plist in Resources */,
 				95EA8E481600E8AD009FF5A5 /* README.markdown in Resources */,
+				95EA8E4D1600FAE4009FF5A5 /* README.markdown in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
