@@ -9,7 +9,6 @@
 #import "BDSIMasterViewController.h"
 
 #import "BDSIDetailViewController.h"
-#import "BDSIAppDelegate.h"
 
 
 

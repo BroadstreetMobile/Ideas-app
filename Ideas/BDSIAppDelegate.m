@@ -7,8 +7,8 @@
 //
 
 #import "BDSIAppDelegate.h"
-//#import "RestaurantSafetyInfo.h"
 #import "BDSIMasterViewController.h"
+//#import "BDSIWhitePaperListViewController.h"
 
 @implementation BDSIAppDelegate
 
@@ -31,7 +31,7 @@
     }
 
     //FIXME: force load of a class
-//    [BDSIWhitePaperListViewController class];
+//   [BDSIWhitePaperListViewController class];
     
     NSManagedObjectContext *context = [self managedObjectContext];
     RestaurantSafetyInfo *restaurantSafetyInfo = [NSEntityDescription

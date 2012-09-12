@@ -27,6 +27,9 @@
 		95EA8E371600D017009FF5A5 /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = 95EA8E361600D017009FF5A5 /* Event.m */; };
 		95EA8E3A1600D017009FF5A5 /* WhitePaper.m in Sources */ = {isa = PBXBuildFile; fileRef = 95EA8E391600D017009FF5A5 /* WhitePaper.m */; };
 		95EA8E3D1600D017009FF5A5 /* RestaurantSafetyInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 95EA8E3C1600D017009FF5A5 /* RestaurantSafetyInfo.m */; };
+		95EA8E401600E015009FF5A5 /* BDSISolutionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95EA8E3F1600E015009FF5A5 /* BDSISolutionsViewController.m */; };
+		95EA8E451600E168009FF5A5 /* BDSIPassbookViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95EA8E441600E168009FF5A5 /* BDSIPassbookViewController.m */; };
+		95EA8E481600E8AD009FF5A5 /* README.markdown in Resources */ = {isa = PBXBuildFile; fileRef = 95EA8E471600E8AD009FF5A5 /* README.markdown */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,6 +66,11 @@
 		95EA8E391600D017009FF5A5 /* WhitePaper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WhitePaper.m; sourceTree = "<group>"; };
 		95EA8E3B1600D017009FF5A5 /* RestaurantSafetyInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RestaurantSafetyInfo.h; sourceTree = "<group>"; };
 		95EA8E3C1600D017009FF5A5 /* RestaurantSafetyInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RestaurantSafetyInfo.m; sourceTree = "<group>"; };
+		95EA8E3E1600E015009FF5A5 /* BDSISolutionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDSISolutionsViewController.h; sourceTree = "<group>"; };
+		95EA8E3F1600E015009FF5A5 /* BDSISolutionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDSISolutionsViewController.m; sourceTree = "<group>"; };
+		95EA8E431600E168009FF5A5 /* BDSIPassbookViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDSIPassbookViewController.h; sourceTree = "<group>"; };
+		95EA8E441600E168009FF5A5 /* BDSIPassbookViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDSIPassbookViewController.m; sourceTree = "<group>"; };
+		95EA8E471600E8AD009FF5A5 /* README.markdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.markdown; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +121,7 @@
 		951070A915F69D9B00E8E336 /* Ideas */ = {
 			isa = PBXGroup;
 			children = (
+				95EA8E471600E8AD009FF5A5 /* README.markdown */,
 				951070B215F69D9B00E8E336 /* BDSIAppDelegate.h */,
 				951070B315F69D9B00E8E336 /* BDSIAppDelegate.m */,
 				951070B515F69D9C00E8E336 /* MainStoryboard_iPhone.storyboard */,
@@ -123,6 +132,7 @@
 				951070C215F69D9C00E8E336 /* BDSIDetailViewController.m */,
 				951070AA15F69D9B00E8E336 /* Supporting Files */,
 				951F315715FE8B0500C26DC3 /* White Papers */,
+				95EA8E411600E020009FF5A5 /* Solutions */,
 			);
 			path = Ideas;
 			sourceTree = "<group>";
@@ -172,6 +182,57 @@
 				95EA8E361600D017009FF5A5 /* Event.m */,
 			);
 			name = "Data Model";
+			sourceTree = "<group>";
+		};
+		95EA8E411600E020009FF5A5 /* Solutions */ = {
+			isa = PBXGroup;
+			children = (
+				95EA8E4B1600ECC2009FF5A5 /* HTML5 */,
+				95EA8E4A1600ECBA009FF5A5 /* Social Sharing */,
+				95EA8E491600ECB2009FF5A5 /* Animations */,
+				95EA8E3E1600E015009FF5A5 /* BDSISolutionsViewController.h */,
+				95EA8E3F1600E015009FF5A5 /* BDSISolutionsViewController.m */,
+				95EA8E461600E176009FF5A5 /* FastTables */,
+				95EA8E421600E146009FF5A5 /* Passbook */,
+			);
+			name = Solutions;
+			sourceTree = "<group>";
+		};
+		95EA8E421600E146009FF5A5 /* Passbook */ = {
+			isa = PBXGroup;
+			children = (
+				95EA8E431600E168009FF5A5 /* BDSIPassbookViewController.h */,
+				95EA8E441600E168009FF5A5 /* BDSIPassbookViewController.m */,
+			);
+			name = Passbook;
+			sourceTree = "<group>";
+		};
+		95EA8E461600E176009FF5A5 /* FastTables */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = FastTables;
+			sourceTree = "<group>";
+		};
+		95EA8E491600ECB2009FF5A5 /* Animations */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Animations;
+			sourceTree = "<group>";
+		};
+		95EA8E4A1600ECBA009FF5A5 /* Social Sharing */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Social Sharing";
+			sourceTree = "<group>";
+		};
+		95EA8E4B1600ECC2009FF5A5 /* HTML5 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = HTML5;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -234,6 +295,7 @@
 				951070D015F6D83B00E8E336 /* B-icon.png in Resources */,
 				951070D115F6D83B00E8E336 /* B-icon@2x.png in Resources */,
 				957DC7C715FF803700C66E3F /* SampleData-Whitepapers.plist in Resources */,
+				95EA8E481600E8AD009FF5A5 /* README.markdown in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -252,6 +314,8 @@
 				95EA8E371600D017009FF5A5 /* Event.m in Sources */,
 				95EA8E3A1600D017009FF5A5 /* WhitePaper.m in Sources */,
 				95EA8E3D1600D017009FF5A5 /* RestaurantSafetyInfo.m in Sources */,
+				95EA8E401600E015009FF5A5 /* BDSISolutionsViewController.m in Sources */,
+				95EA8E451600E168009FF5A5 /* BDSIPassbookViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
