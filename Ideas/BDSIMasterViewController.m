@@ -85,7 +85,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"aCell" forIndexPath:indexPath];
     [self configureCell:cell atIndexPath:indexPath];
     return cell;
 }
@@ -160,7 +160,7 @@
     
     NSFetchRequest *fetchRequestSafeRest = [[NSFetchRequest alloc] init];
     // Edit the entity name as appropriate.
-    NSEntityDescription *entitySafeRest = [NSEntityDescription entityForName:@"Restaurant_Safety_Info" inManagedObjectContext:self.managedObjectContext];
+    NSEntityDescription *entitySafeRest = [NSEntityDescription entityForName:@"RestaurantSafetyInfo" inManagedObjectContext:self.managedObjectContext];
     [fetchRequestSafeRest setEntity:entitySafeRest];
     
     // Set the batch size to a suitable number.

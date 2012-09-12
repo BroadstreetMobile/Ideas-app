@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9492B75F15FF8F07006E9C2E /* Restaurant_Safety_Info.m in Sources */ = {isa = PBXBuildFile; fileRef = 9492B75E15FF8F07006E9C2E /* Restaurant_Safety_Info.m */; };
 		951070A215F69D9B00E8E336 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 951070A115F69D9B00E8E336 /* UIKit.framework */; };
 		951070A415F69D9B00E8E336 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 951070A315F69D9B00E8E336 /* Foundation.framework */; };
 		951070A615F69D9B00E8E336 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 951070A515F69D9B00E8E336 /* CoreGraphics.framework */; };
@@ -17,23 +16,20 @@
 		951070B415F69D9B00E8E336 /* BDSIAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 951070B315F69D9B00E8E336 /* BDSIAppDelegate.m */; };
 		951070B715F69D9C00E8E336 /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 951070B515F69D9C00E8E336 /* MainStoryboard_iPhone.storyboard */; };
 		951070BA15F69D9C00E8E336 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 951070B815F69D9C00E8E336 /* MainStoryboard_iPad.storyboard */; };
-		951070BD15F69D9C00E8E336 /* Ideas.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 951070BB15F69D9C00E8E336 /* Ideas.xcdatamodeld */; };
 		951070C015F69D9C00E8E336 /* BDSIMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 951070BF15F69D9C00E8E336 /* BDSIMasterViewController.m */; };
 		951070C315F69D9C00E8E336 /* BDSIDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 951070C215F69D9C00E8E336 /* BDSIDetailViewController.m */; };
 		951070CA15F69E8E00E8E336 /* Bx57.png in Resources */ = {isa = PBXBuildFile; fileRef = 951070C915F69E8E00E8E336 /* Bx57.png */; };
 		951070CD15F6A0C500E8E336 /* 5-Pillars_highrez_320.png in Resources */ = {isa = PBXBuildFile; fileRef = 951070CC15F6A0C500E8E336 /* 5-Pillars_highrez_320.png */; };
 		951070D015F6D83B00E8E336 /* B-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 951070CE15F6D83B00E8E336 /* B-icon.png */; };
 		951070D115F6D83B00E8E336 /* B-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 951070CF15F6D83B00E8E336 /* B-icon@2x.png */; };
-		951F315215FE8AA800C26DC3 /* BDSIWhitePaperListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 951F315115FE8AA800C26DC3 /* BDSIWhitePaperListViewController.m */; };
-		951F315B15FE8BB100C26DC3 /* Whitepaper.m in Sources */ = {isa = PBXBuildFile; fileRef = 951F315A15FE8BB100C26DC3 /* Whitepaper.m */; };
-		951F315E15FE8BB100C26DC3 /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = 951F315D15FE8BB100C26DC3 /* Event.m */; };
-		951F316115FE8C3D00C26DC3 /* BDSIWhitePaperViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 951F316015FE8C3D00C26DC3 /* BDSIWhitePaperViewController.m */; };
 		957DC7C715FF803700C66E3F /* SampleData-Whitepapers.plist in Resources */ = {isa = PBXBuildFile; fileRef = 957DC7C615FF803700C66E3F /* SampleData-Whitepapers.plist */; };
+		95EA8E341600CF43009FF5A5 /* Ideas.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 95EA8E321600CF43009FF5A5 /* Ideas.xcdatamodeld */; };
+		95EA8E371600D017009FF5A5 /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = 95EA8E361600D017009FF5A5 /* Event.m */; };
+		95EA8E3A1600D017009FF5A5 /* WhitePaper.m in Sources */ = {isa = PBXBuildFile; fileRef = 95EA8E391600D017009FF5A5 /* WhitePaper.m */; };
+		95EA8E3D1600D017009FF5A5 /* RestaurantSafetyInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 95EA8E3C1600D017009FF5A5 /* RestaurantSafetyInfo.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		9492B75D15FF8F07006E9C2E /* Restaurant_Safety_Info.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Restaurant_Safety_Info.h; sourceTree = "<group>"; };
-		9492B75E15FF8F07006E9C2E /* Restaurant_Safety_Info.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Restaurant_Safety_Info.m; sourceTree = "<group>"; };
 		9510709D15F69D9B00E8E336 /* Ideas.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ideas.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		951070A115F69D9B00E8E336 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		951070A315F69D9B00E8E336 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -47,7 +43,6 @@
 		951070B315F69D9B00E8E336 /* BDSIAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BDSIAppDelegate.m; sourceTree = "<group>"; };
 		951070B615F69D9C00E8E336 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
 		951070B915F69D9C00E8E336 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
-		951070BC15F69D9C00E8E336 /* Ideas.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Ideas.xcdatamodel; sourceTree = "<group>"; };
 		951070BE15F69D9C00E8E336 /* BDSIMasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDSIMasterViewController.h; sourceTree = "<group>"; };
 		951070BF15F69D9C00E8E336 /* BDSIMasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BDSIMasterViewController.m; sourceTree = "<group>"; };
 		951070C115F69D9C00E8E336 /* BDSIDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDSIDetailViewController.h; sourceTree = "<group>"; };
@@ -58,13 +53,16 @@
 		951070CF15F6D83B00E8E336 /* B-icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "B-icon@2x.png"; sourceTree = "<group>"; };
 		951F315015FE8AA800C26DC3 /* BDSIWhitePaperListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDSIWhitePaperListViewController.h; sourceTree = "<group>"; };
 		951F315115FE8AA800C26DC3 /* BDSIWhitePaperListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDSIWhitePaperListViewController.m; sourceTree = "<group>"; };
-		951F315915FE8BB100C26DC3 /* Whitepaper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Whitepaper.h; sourceTree = "<group>"; };
-		951F315A15FE8BB100C26DC3 /* Whitepaper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Whitepaper.m; sourceTree = "<group>"; };
-		951F315C15FE8BB100C26DC3 /* Event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Event.h; sourceTree = "<group>"; };
-		951F315D15FE8BB100C26DC3 /* Event.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Event.m; sourceTree = "<group>"; };
 		951F315F15FE8C3D00C26DC3 /* BDSIWhitePaperViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDSIWhitePaperViewController.h; sourceTree = "<group>"; };
 		951F316015FE8C3D00C26DC3 /* BDSIWhitePaperViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDSIWhitePaperViewController.m; sourceTree = "<group>"; };
 		957DC7C615FF803700C66E3F /* SampleData-Whitepapers.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "SampleData-Whitepapers.plist"; sourceTree = "<group>"; };
+		95EA8E331600CF43009FF5A5 /* Ideas.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Ideas.xcdatamodel; sourceTree = "<group>"; };
+		95EA8E351600D017009FF5A5 /* Event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Event.h; sourceTree = "<group>"; };
+		95EA8E361600D017009FF5A5 /* Event.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Event.m; sourceTree = "<group>"; };
+		95EA8E381600D017009FF5A5 /* WhitePaper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WhitePaper.h; sourceTree = "<group>"; };
+		95EA8E391600D017009FF5A5 /* WhitePaper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WhitePaper.m; sourceTree = "<group>"; };
+		95EA8E3B1600D017009FF5A5 /* RestaurantSafetyInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RestaurantSafetyInfo.h; sourceTree = "<group>"; };
+		95EA8E3C1600D017009FF5A5 /* RestaurantSafetyInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RestaurantSafetyInfo.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +83,7 @@
 		9510709215F69D9B00E8E336 = {
 			isa = PBXGroup;
 			children = (
+				95EA8E301600CEAB009FF5A5 /* Data Model */,
 				951070CB15F69FDF00E8E336 /* Images */,
 				951070A915F69D9B00E8E336 /* Ideas */,
 				951070A015F69D9B00E8E336 /* Frameworks */,
@@ -122,9 +121,6 @@
 				951070BF15F69D9C00E8E336 /* BDSIMasterViewController.m */,
 				951070C115F69D9C00E8E336 /* BDSIDetailViewController.h */,
 				951070C215F69D9C00E8E336 /* BDSIDetailViewController.m */,
-				951070BB15F69D9C00E8E336 /* Ideas.xcdatamodeld */,
-				9492B75D15FF8F07006E9C2E /* Restaurant_Safety_Info.h */,
-				9492B75E15FF8F07006E9C2E /* Restaurant_Safety_Info.m */,
 				951070AA15F69D9B00E8E336 /* Supporting Files */,
 				951F315715FE8B0500C26DC3 /* White Papers */,
 			);
@@ -164,18 +160,18 @@
 			name = "White Papers";
 			sourceTree = "<group>";
 		};
-		951F315815FE8B7000C26DC3 /* Data Model */ = {
+		95EA8E301600CEAB009FF5A5 /* Data Model */ = {
 			isa = PBXGroup;
 			children = (
-				951070BB15F69D9C00E8E336 /* Ideas.xcdatamodeld */,
-				951F315C15FE8BB100C26DC3 /* Event.h */,
-				951F315D15FE8BB100C26DC3 /* Event.m */,
-				951F315915FE8BB100C26DC3 /* Whitepaper.h */,
-				951F315A15FE8BB100C26DC3 /* Whitepaper.m */,
-				957DC7C615FF803700C66E3F /* SampleData-Whitepapers.plist */,
+				95EA8E321600CF43009FF5A5 /* Ideas.xcdatamodeld */,
+				95EA8E3B1600D017009FF5A5 /* RestaurantSafetyInfo.h */,
+				95EA8E3C1600D017009FF5A5 /* RestaurantSafetyInfo.m */,
+				95EA8E381600D017009FF5A5 /* WhitePaper.h */,
+				95EA8E391600D017009FF5A5 /* WhitePaper.m */,
+				95EA8E351600D017009FF5A5 /* Event.h */,
+				95EA8E361600D017009FF5A5 /* Event.m */,
 			);
 			name = "Data Model";
-			path = ..;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -250,10 +246,12 @@
 			files = (
 				951070B015F69D9B00E8E336 /* main.m in Sources */,
 				951070B415F69D9B00E8E336 /* BDSIAppDelegate.m in Sources */,
-				951070BD15F69D9C00E8E336 /* Ideas.xcdatamodeld in Sources */,
 				951070C015F69D9C00E8E336 /* BDSIMasterViewController.m in Sources */,
 				951070C315F69D9C00E8E336 /* BDSIDetailViewController.m in Sources */,
-				9492B75F15FF8F07006E9C2E /* Restaurant_Safety_Info.m in Sources */,
+				95EA8E341600CF43009FF5A5 /* Ideas.xcdatamodeld in Sources */,
+				95EA8E371600D017009FF5A5 /* Event.m in Sources */,
+				95EA8E3A1600D017009FF5A5 /* WhitePaper.m in Sources */,
+				95EA8E3D1600D017009FF5A5 /* RestaurantSafetyInfo.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -388,14 +386,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		951070BB15F69D9C00E8E336 /* Ideas.xcdatamodeld */ = {
+		95EA8E321600CF43009FF5A5 /* Ideas.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				951070BC15F69D9C00E8E336 /* Ideas.xcdatamodel */,
+				95EA8E331600CF43009FF5A5 /* Ideas.xcdatamodel */,
 			);
-			currentVersion = 951070BC15F69D9C00E8E336 /* Ideas.xcdatamodel */;
-			name = Ideas.xcdatamodeld;
-			path = Ideas/Ideas.xcdatamodeld;
+			currentVersion = 95EA8E331600CF43009FF5A5 /* Ideas.xcdatamodel */;
+			path = Ideas.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

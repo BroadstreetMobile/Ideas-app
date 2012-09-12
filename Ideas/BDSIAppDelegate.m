@@ -7,8 +7,7 @@
 //
 
 #import "BDSIAppDelegate.h"
-#import "Restaurant_Safety_Info.h"
-
+//#import "RestaurantSafetyInfo.h"
 #import "BDSIMasterViewController.h"
 
 @implementation BDSIAppDelegate
@@ -30,10 +29,13 @@
         BDSIMasterViewController *controller = (BDSIMasterViewController *)masterNavigationController.topViewController;
         controller.managedObjectContext = self.managedObjectContext;
     }
+
+    //FIXME: force load of a class
+//    [BDSIWhitePaperListViewController class];
     
     NSManagedObjectContext *context = [self managedObjectContext];
-    Restaurant_Safety_Info *restaurantSafetyInfo = [NSEntityDescription
-                                                  insertNewObjectForEntityForName:@"Restaurant_Safety_Info"
+    RestaurantSafetyInfo *restaurantSafetyInfo = [NSEntityDescription
+                                                  insertNewObjectForEntityForName:@"RestaurantSafetyInfo"
                                                   inManagedObjectContext:context];
     
     restaurantSafetyInfo.establishment_name = @"Fractured Prunes";
@@ -42,8 +44,8 @@
     restaurantSafetyInfo.safety_action = @"Test";
     
     
-    Restaurant_Safety_Info *restaurantSafetyInfo1 = [NSEntityDescription
-                                                   insertNewObjectForEntityForName:@"Restaurant_Safety_Info"
+    RestaurantSafetyInfo *restaurantSafetyInfo1 = [NSEntityDescription
+                                                   insertNewObjectForEntityForName:@"RestaurantSafetyInfo"
                                                    inManagedObjectContext:context];
     restaurantSafetyInfo1.establishment_name = @"MeatLoaf";
     restaurantSafetyInfo1.establishment_type = @"Cart";

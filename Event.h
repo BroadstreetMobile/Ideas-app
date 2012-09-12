@@ -2,7 +2,7 @@
 //  Event.h
 //  Ideas
 //
-//  Created by Darren Baptiste on 2012-09-10.
+//  Created by Darren Baptiste on 2012-09-12.
 //  Copyright (c) 2012 BroadstreetMobile. All rights reserved.
 //
 
@@ -12,6 +12,6 @@
 
 @interface Event : NSManagedObject
 
-@property (nonatomic) NSTimeInterval timeStamp;
+@property (nonatomic, retain) NSDate * timeStamp;
 
 @end

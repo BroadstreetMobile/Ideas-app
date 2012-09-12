@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1807" systemVersion="12B19" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Event" representedClassName="Event" syncable="YES">
+        <attribute name="timeStamp" optional="YES" attributeType="Date" syncable="YES"/>
+    </entity>
+    <entity name="RestaurantSafetyInfo" representedClassName="RestaurantSafetyInfo" syncable="YES">
+        <attribute name="establishment_name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="establishment_status" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="establishment_type" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="safety_action" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="WhitePaper" representedClassName="WhitePaper" syncable="YES">
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="url" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="WhitePaper" positionX="160" positionY="192" width="128" height="75"/>
+        <element name="RestaurantSafetyInfo" positionX="160" positionY="192" width="128" height="105"/>
+        <element name="Event" positionX="160" positionY="192" width="128" height="60"/>
+    </elements>
+</model>

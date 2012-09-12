@@ -1,8 +1,8 @@
 //
-//  Restaurant_Safety_Info.h
+//  RestaurantSafetyInfo.h
 //  Ideas
 //
-//  Created by tabinda siddiqi on 2012-09-11.
+//  Created by Darren Baptiste on 2012-09-12.
 //  Copyright (c) 2012 BroadstreetMobile. All rights reserved.
 //
 
@@ -10,11 +10,11 @@
 #import <CoreData/CoreData.h>
 
 
-@interface Restaurant_Safety_Info : NSManagedObject
+@interface RestaurantSafetyInfo : NSManagedObject
 
 @property (nonatomic, retain) NSString * establishment_name;
 @property (nonatomic, retain) NSString * establishment_type;
-@property (nonatomic, retain) NSString * safety_action;
 @property (nonatomic, retain) NSString * establishment_status;
+@property (nonatomic, retain) NSString * safety_action;
 
 @end

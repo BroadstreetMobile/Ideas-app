@@ -1,17 +1,16 @@
 //
-//  Whitepaper.m
+//  WhitePaper.m
 //  Ideas
 //
-//  Created by Darren Baptiste on 2012-09-10.
+//  Created by Darren Baptiste on 2012-09-12.
 //  Copyright (c) 2012 BroadstreetMobile. All rights reserved.
 //
 
-#import "Whitepaper.h"
+#import "WhitePaper.h"
 
 
-@implementation Whitepaper
+@implementation WhitePaper
 
-@dynamic thumbnail;
 @dynamic title;
 @dynamic url;
 

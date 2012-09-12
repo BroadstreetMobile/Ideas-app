@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Restaurant_Safety_Info.h"
+#import "RestaurantSafetyInfo.h"
 
 @class BDSIDetailViewController;
 
