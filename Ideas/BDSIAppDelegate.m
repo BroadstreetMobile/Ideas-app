@@ -8,7 +8,6 @@
 
 #import "BDSIAppDelegate.h"
 #import "BDSIMasterViewController.h"
-//#import "BDSIWhitePaperListViewController.h"
 
 @implementation BDSIAppDelegate
 
@@ -30,9 +29,6 @@
         controller.managedObjectContext = self.managedObjectContext;
     }
 
-    //FIXME: force load of a class
-//   [BDSIWhitePaperListViewController class];
-    
     NSManagedObjectContext *context = [self managedObjectContext];
     RestaurantSafetyInfo *restaurantSafetyInfo = [NSEntityDescription
                                                   insertNewObjectForEntityForName:@"RestaurantSafetyInfo"

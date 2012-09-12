@@ -10,5 +10,5 @@
 #import "Whitepaper.h"
 
 @interface BDSIWhitePaperViewController : UIViewController
-@property (nonatomic, weak) Whitepaper *whitepaper;
+@property (nonatomic, weak) WhitePaper *whitepaper;
 @end

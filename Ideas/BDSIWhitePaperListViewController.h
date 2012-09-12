@@ -7,6 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CoreData/CoreData.h>
+#import "BDSIWhitePaperViewController.h"
 
 @interface BDSIWhitePaperListViewController : UITableViewController <NSFetchedResultsControllerDelegate>
+
+@property (strong, nonatomic) BDSIDetailViewController *detailViewController;
+
+@property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
+@property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
+
 @end
