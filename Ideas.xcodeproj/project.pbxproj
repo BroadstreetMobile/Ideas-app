@@ -24,6 +24,11 @@
 		951070CD15F6A0C500E8E336 /* 5-Pillars_highrez_320.png in Resources */ = {isa = PBXBuildFile; fileRef = 951070CC15F6A0C500E8E336 /* 5-Pillars_highrez_320.png */; };
 		951070D015F6D83B00E8E336 /* B-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 951070CE15F6D83B00E8E336 /* B-icon.png */; };
 		951070D115F6D83B00E8E336 /* B-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 951070CF15F6D83B00E8E336 /* B-icon@2x.png */; };
+		951F315215FE8AA800C26DC3 /* BDSIWhitePaperListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 951F315115FE8AA800C26DC3 /* BDSIWhitePaperListViewController.m */; };
+		951F315B15FE8BB100C26DC3 /* Whitepaper.m in Sources */ = {isa = PBXBuildFile; fileRef = 951F315A15FE8BB100C26DC3 /* Whitepaper.m */; };
+		951F315E15FE8BB100C26DC3 /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = 951F315D15FE8BB100C26DC3 /* Event.m */; };
+		951F316115FE8C3D00C26DC3 /* BDSIWhitePaperViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 951F316015FE8C3D00C26DC3 /* BDSIWhitePaperViewController.m */; };
+		957DC7C715FF803700C66E3F /* SampleData-Whitepapers.plist in Resources */ = {isa = PBXBuildFile; fileRef = 957DC7C615FF803700C66E3F /* SampleData-Whitepapers.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +56,15 @@
 		951070CC15F6A0C500E8E336 /* 5-Pillars_highrez_320.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "5-Pillars_highrez_320.png"; sourceTree = "<group>"; };
 		951070CE15F6D83B00E8E336 /* B-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "B-icon.png"; sourceTree = "<group>"; };
 		951070CF15F6D83B00E8E336 /* B-icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "B-icon@2x.png"; sourceTree = "<group>"; };
+		951F315015FE8AA800C26DC3 /* BDSIWhitePaperListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDSIWhitePaperListViewController.h; sourceTree = "<group>"; };
+		951F315115FE8AA800C26DC3 /* BDSIWhitePaperListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDSIWhitePaperListViewController.m; sourceTree = "<group>"; };
+		951F315915FE8BB100C26DC3 /* Whitepaper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Whitepaper.h; sourceTree = "<group>"; };
+		951F315A15FE8BB100C26DC3 /* Whitepaper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Whitepaper.m; sourceTree = "<group>"; };
+		951F315C15FE8BB100C26DC3 /* Event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Event.h; sourceTree = "<group>"; };
+		951F315D15FE8BB100C26DC3 /* Event.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Event.m; sourceTree = "<group>"; };
+		951F315F15FE8C3D00C26DC3 /* BDSIWhitePaperViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDSIWhitePaperViewController.h; sourceTree = "<group>"; };
+		951F316015FE8C3D00C26DC3 /* BDSIWhitePaperViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDSIWhitePaperViewController.m; sourceTree = "<group>"; };
+		957DC7C615FF803700C66E3F /* SampleData-Whitepapers.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "SampleData-Whitepapers.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +126,7 @@
 				9492B75D15FF8F07006E9C2E /* Restaurant_Safety_Info.h */,
 				9492B75E15FF8F07006E9C2E /* Restaurant_Safety_Info.m */,
 				951070AA15F69D9B00E8E336 /* Supporting Files */,
+				951F315715FE8B0500C26DC3 /* White Papers */,
 			);
 			path = Ideas;
 			sourceTree = "<group>";
@@ -136,6 +151,31 @@
 				951070CC15F6A0C500E8E336 /* 5-Pillars_highrez_320.png */,
 			);
 			name = Images;
+			sourceTree = "<group>";
+		};
+		951F315715FE8B0500C26DC3 /* White Papers */ = {
+			isa = PBXGroup;
+			children = (
+				951F315015FE8AA800C26DC3 /* BDSIWhitePaperListViewController.h */,
+				951F315115FE8AA800C26DC3 /* BDSIWhitePaperListViewController.m */,
+				951F315F15FE8C3D00C26DC3 /* BDSIWhitePaperViewController.h */,
+				951F316015FE8C3D00C26DC3 /* BDSIWhitePaperViewController.m */,
+			);
+			name = "White Papers";
+			sourceTree = "<group>";
+		};
+		951F315815FE8B7000C26DC3 /* Data Model */ = {
+			isa = PBXGroup;
+			children = (
+				951070BB15F69D9C00E8E336 /* Ideas.xcdatamodeld */,
+				951F315C15FE8BB100C26DC3 /* Event.h */,
+				951F315D15FE8BB100C26DC3 /* Event.m */,
+				951F315915FE8BB100C26DC3 /* Whitepaper.h */,
+				951F315A15FE8BB100C26DC3 /* Whitepaper.m */,
+				957DC7C615FF803700C66E3F /* SampleData-Whitepapers.plist */,
+			);
+			name = "Data Model";
+			path = ..;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -197,6 +237,7 @@
 				951070CD15F6A0C500E8E336 /* 5-Pillars_highrez_320.png in Resources */,
 				951070D015F6D83B00E8E336 /* B-icon.png in Resources */,
 				951070D115F6D83B00E8E336 /* B-icon@2x.png in Resources */,
+				957DC7C715FF803700C66E3F /* SampleData-Whitepapers.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -353,7 +394,8 @@
 				951070BC15F69D9C00E8E336 /* Ideas.xcdatamodel */,
 			);
 			currentVersion = 951070BC15F69D9C00E8E336 /* Ideas.xcdatamodel */;
-			path = Ideas.xcdatamodeld;
+			name = Ideas.xcdatamodeld;
+			path = Ideas/Ideas.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
