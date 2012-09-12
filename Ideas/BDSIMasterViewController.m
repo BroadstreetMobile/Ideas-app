@@ -157,20 +157,6 @@
     [fetchRequest setSortDescriptors:sortDescriptors];
     
     
-    NSFetchRequest *fetchRequestSafeRest = [[NSFetchRequest alloc] init];
-    // Edit the entity name as appropriate.
-    NSEntityDescription *entitySafeRest = [NSEntityDescription entityForName:@"RestaurantSafetyInfo" inManagedObjectContext:self.managedObjectContext];
-    [fetchRequestSafeRest setEntity:entitySafeRest];
-    
-    // Set the batch size to a suitable number.
-    [fetchRequestSafeRest setFetchBatchSize:20];
-    
-    // Edit the sort key as appropriate.
-    NSSortDescriptor *sortDescriptorSafeRest = [[NSSortDescriptor alloc] initWithKey:@"established_name" ascending:YES];
-    NSArray *sortDescriptorsSafeRest = @[sortDescriptorSafeRest];
-    
-    [fetchRequestSafeRest setSortDescriptors:sortDescriptorsSafeRest];
-    
     // Edit the section name key path and cache name if appropriate.
     // nil for section name key path means "no sections".
     NSFetchedResultsController *aFetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:self.managedObjectContext sectionNameKeyPath:nil cacheName:@"Master"];

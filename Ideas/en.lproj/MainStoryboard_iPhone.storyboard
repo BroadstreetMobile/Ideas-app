@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2829" systemVersion="12B19" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="2Wx-9p-cgo">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2829" systemVersion="12A269" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="2Wx-9p-cgo">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1914"/>
     </dependencies>
@@ -118,16 +118,16 @@
             </objects>
             <point key="canvasLocation" x="715" y="-1219"/>
         </scene>
-        <!--Master View Controller - RestaurantSafetyInfo-->
+        <!--Restaurant List View Controller - RestaurantSafetyInfo-->
         <scene sceneID="jh5-yT-9KI">
             <objects>
-                <tableViewController title="RestaurantSafetyInfo" id="TS3-24-oCB" customClass="BDSIMasterViewController" sceneMemberID="viewController">
+                <tableViewController title="RestaurantSafetyInfo" id="TS3-24-oCB" customClass="BDSIRestaurantListViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="D9P-tG-aLR">
                         <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="aCell" textLabel="BO2-Rg-Txe" style="IBUITableViewCellStyleDefault" id="3EQ-6c-fpD">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="restaurantCell" textLabel="BO2-Rg-Txe" style="IBUITableViewCellStyleDefault" id="3EQ-6c-fpD">
                                 <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -147,6 +147,7 @@
                             </tableViewCell>
                         </prototypes>
                         <connections>
+                            <outlet property="dataSource" destination="TS3-24-oCB" id="S1M-Mx-vhe"/>
                             <outlet property="delegate" destination="TS3-24-oCB" id="nVE-2c-U3Y"/>
                         </connections>
                     </tableView>
@@ -408,6 +409,29 @@
         <image name="5-Pillars_highrez_320.png" width="320" height="309"/>
         <image name="B-icon.png" width="30" height="30"/>
     </resources>
+    <classes>
+        <class className="BDSIDetailViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/BDSIDetailViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="detailDescriptionLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="BDSIMasterViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/BDSIMasterViewController.h"/>
+        </class>
+        <class className="BDSIPassbookViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/BDSIPassbookViewController.h"/>
+        </class>
+        <class className="BDSIRestaurantListViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/BDSIRestaurantListViewController.h"/>
+        </class>
+        <class className="BDSISolutionsViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/BDSISolutionsViewController.h"/>
+        </class>
+        <class className="BDSIWhitePaperViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/BDSIWhitePaperViewController.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

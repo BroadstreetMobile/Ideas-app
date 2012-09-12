@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9492B78A16010AA7006E9C2E /* BDSIRestaurantListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9492B78916010AA7006E9C2E /* BDSIRestaurantListViewController.m */; };
 		951070A215F69D9B00E8E336 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 951070A115F69D9B00E8E336 /* UIKit.framework */; };
 		951070A415F69D9B00E8E336 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 951070A315F69D9B00E8E336 /* Foundation.framework */; };
 		951070A615F69D9B00E8E336 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 951070A515F69D9B00E8E336 /* CoreGraphics.framework */; };
@@ -33,6 +34,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9492B78816010AA7006E9C2E /* BDSIRestaurantListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDSIRestaurantListViewController.h; sourceTree = "<group>"; };
+		9492B78916010AA7006E9C2E /* BDSIRestaurantListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDSIRestaurantListViewController.m; sourceTree = "<group>"; };
 		9510709D15F69D9B00E8E336 /* Ideas.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ideas.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		951070A115F69D9B00E8E336 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		951070A315F69D9B00E8E336 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -125,6 +128,8 @@
 				951070B215F69D9B00E8E336 /* BDSIAppDelegate.h */,
 				951070B315F69D9B00E8E336 /* BDSIAppDelegate.m */,
 				951070B515F69D9C00E8E336 /* MainStoryboard_iPhone.storyboard */,
+				9492B78816010AA7006E9C2E /* BDSIRestaurantListViewController.h */,
+				9492B78916010AA7006E9C2E /* BDSIRestaurantListViewController.m */,
 				951070B815F69D9C00E8E336 /* MainStoryboard_iPad.storyboard */,
 				951070BE15F69D9C00E8E336 /* BDSIMasterViewController.h */,
 				951070BF15F69D9C00E8E336 /* BDSIMasterViewController.m */,
@@ -316,6 +321,7 @@
 				95EA8E3D1600D017009FF5A5 /* RestaurantSafetyInfo.m in Sources */,
 				95EA8E401600E015009FF5A5 /* BDSISolutionsViewController.m in Sources */,
 				95EA8E451600E168009FF5A5 /* BDSIPassbookViewController.m in Sources */,
+				9492B78A16010AA7006E9C2E /* BDSIRestaurantListViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
