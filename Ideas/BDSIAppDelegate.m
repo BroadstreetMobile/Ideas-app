@@ -8,6 +8,7 @@
 
 #import "BDSIAppDelegate.h"
 #import "BDSIMasterViewController.h"
+#import "BDSIDineSafeDataLoader.h"
 
 @implementation BDSIAppDelegate
 
@@ -29,6 +30,34 @@
         controller.managedObjectContext = self.managedObjectContext;
     }
 
+    // TODO: uncomment the line below to have test data added
+    // [self loadTestData];
+    NSString *localFile = @"dinesafe-test.xml";
+    [self loadDineSafeDataFromFile:localFile];
+
+    return YES;
+}
+
+// TODO: decide if we need to parse the DineSafe data
+- (BOOL)shouldLoadDineSafeData
+{
+    return YES;
+}
+
+- (void)loadDineSafeDataFromFile:(NSString *)localFileName
+{
+    if ( [self shouldLoadDineSafeData])
+    {
+        BDSIDineSafeDataLoader *dineSafeLoader = [[BDSIDineSafeDataLoader alloc] initWithDataFromFile:localFileName];
+        if ( !dineSafeLoader)
+        {
+            // Houston, we have a problem...
+        }
+    }
+}
+
+- (void)loadTestData
+{
     NSManagedObjectContext *context = [self managedObjectContext];
     RestaurantSafetyInfo *restaurantSafetyInfo = [NSEntityDescription
                                                   insertNewObjectForEntityForName:@"RestaurantSafetyInfo"
@@ -48,13 +77,12 @@
     restaurantSafetyInfo1.establishment_status = @"Fail";
     restaurantSafetyInfo1.safety_action = @"Test";
     
-
+    
     NSError *error;
     if (![context save:&error]) {
         NSLog(@"Whoops, couldn't save: %@", [error localizedDescription]);
     }
-
-    return YES;
+    
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application

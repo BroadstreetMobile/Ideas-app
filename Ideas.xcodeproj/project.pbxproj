@@ -24,6 +24,9 @@
 		951070D015F6D83B00E8E336 /* B-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 951070CE15F6D83B00E8E336 /* B-icon.png */; };
 		951070D115F6D83B00E8E336 /* B-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 951070CF15F6D83B00E8E336 /* B-icon@2x.png */; };
 		957DC7C715FF803700C66E3F /* SampleData-Whitepapers.plist in Resources */ = {isa = PBXBuildFile; fileRef = 957DC7C615FF803700C66E3F /* SampleData-Whitepapers.plist */; };
+		958D17821602493A00FAD2F8 /* InspectionReport.m in Sources */ = {isa = PBXBuildFile; fileRef = 958D17811602493A00FAD2F8 /* InspectionReport.m */; };
+		958D178416024D9200FAD2F8 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 958D178316024D9200FAD2F8 /* Default-568h@2x.png */; };
+		958D17861602547600FAD2F8 /* dinesafe-test.xml in Resources */ = {isa = PBXBuildFile; fileRef = 958D17851602547600FAD2F8 /* dinesafe-test.xml */; };
 		95EA8E341600CF43009FF5A5 /* Ideas.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 95EA8E321600CF43009FF5A5 /* Ideas.xcdatamodeld */; };
 		95EA8E371600D017009FF5A5 /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = 95EA8E361600D017009FF5A5 /* Event.m */; };
 		95EA8E3A1600D017009FF5A5 /* WhitePaper.m in Sources */ = {isa = PBXBuildFile; fileRef = 95EA8E391600D017009FF5A5 /* WhitePaper.m */; };
@@ -31,6 +34,7 @@
 		95EA8E401600E015009FF5A5 /* BDSISolutionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95EA8E3F1600E015009FF5A5 /* BDSISolutionsViewController.m */; };
 		95EA8E451600E168009FF5A5 /* BDSIPassbookViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95EA8E441600E168009FF5A5 /* BDSIPassbookViewController.m */; };
 		95EA8E4D1600FAE4009FF5A5 /* README.markdown in Resources */ = {isa = PBXBuildFile; fileRef = 95EA8E4C1600FAE4009FF5A5 /* README.markdown */; };
+		95EA8E59160125A1009FF5A5 /* BDSIDineSafeDataLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 95EA8E58160125A1009FF5A5 /* BDSIDineSafeDataLoader.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +66,10 @@
 		951F315F15FE8C3D00C26DC3 /* BDSIWhitePaperViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDSIWhitePaperViewController.h; sourceTree = "<group>"; };
 		951F316015FE8C3D00C26DC3 /* BDSIWhitePaperViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDSIWhitePaperViewController.m; sourceTree = "<group>"; };
 		957DC7C615FF803700C66E3F /* SampleData-Whitepapers.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "SampleData-Whitepapers.plist"; sourceTree = "<group>"; };
+		958D17801602493A00FAD2F8 /* InspectionReport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InspectionReport.h; sourceTree = "<group>"; };
+		958D17811602493A00FAD2F8 /* InspectionReport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InspectionReport.m; sourceTree = "<group>"; };
+		958D178316024D9200FAD2F8 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		958D17851602547600FAD2F8 /* dinesafe-test.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "dinesafe-test.xml"; path = "../dinesafe-test.xml"; sourceTree = "<group>"; };
 		95EA8E331600CF43009FF5A5 /* Ideas.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Ideas.xcdatamodel; sourceTree = "<group>"; };
 		95EA8E351600D017009FF5A5 /* Event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Event.h; sourceTree = "<group>"; };
 		95EA8E361600D017009FF5A5 /* Event.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Event.m; sourceTree = "<group>"; };
@@ -74,6 +82,8 @@
 		95EA8E431600E168009FF5A5 /* BDSIPassbookViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDSIPassbookViewController.h; sourceTree = "<group>"; };
 		95EA8E441600E168009FF5A5 /* BDSIPassbookViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDSIPassbookViewController.m; sourceTree = "<group>"; };
 		95EA8E4C1600FAE4009FF5A5 /* README.markdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.markdown; sourceTree = "<group>"; };
+		95EA8E57160125A1009FF5A5 /* BDSIDineSafeDataLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDSIDineSafeDataLoader.h; sourceTree = "<group>"; };
+		95EA8E58160125A1009FF5A5 /* BDSIDineSafeDataLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDSIDineSafeDataLoader.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +104,7 @@
 		9510709215F69D9B00E8E336 = {
 			isa = PBXGroup;
 			children = (
+				958D178316024D9200FAD2F8 /* Default-568h@2x.png */,
 				95EA8E4C1600FAE4009FF5A5 /* README.markdown */,
 				95EA8E301600CEAB009FF5A5 /* Data Model */,
 				951070CB15F69FDF00E8E336 /* Images */,
@@ -145,6 +156,7 @@
 		951070AA15F69D9B00E8E336 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				958D17851602547600FAD2F8 /* dinesafe-test.xml */,
 				951070AB15F69D9B00E8E336 /* Ideas-Info.plist */,
 				951070AC15F69D9B00E8E336 /* InfoPlist.strings */,
 				951070AF15F69D9B00E8E336 /* main.m */,
@@ -179,12 +191,16 @@
 			isa = PBXGroup;
 			children = (
 				95EA8E321600CF43009FF5A5 /* Ideas.xcdatamodeld */,
+				958D17801602493A00FAD2F8 /* InspectionReport.h */,
+				958D17811602493A00FAD2F8 /* InspectionReport.m */,
 				95EA8E3B1600D017009FF5A5 /* RestaurantSafetyInfo.h */,
 				95EA8E3C1600D017009FF5A5 /* RestaurantSafetyInfo.m */,
 				95EA8E381600D017009FF5A5 /* WhitePaper.h */,
 				95EA8E391600D017009FF5A5 /* WhitePaper.m */,
 				95EA8E351600D017009FF5A5 /* Event.h */,
 				95EA8E361600D017009FF5A5 /* Event.m */,
+				95EA8E57160125A1009FF5A5 /* BDSIDineSafeDataLoader.h */,
+				95EA8E58160125A1009FF5A5 /* BDSIDineSafeDataLoader.m */,
 			);
 			name = "Data Model";
 			sourceTree = "<group>";
@@ -301,6 +317,8 @@
 				951070D115F6D83B00E8E336 /* B-icon@2x.png in Resources */,
 				957DC7C715FF803700C66E3F /* SampleData-Whitepapers.plist in Resources */,
 				95EA8E4D1600FAE4009FF5A5 /* README.markdown in Resources */,
+				958D178416024D9200FAD2F8 /* Default-568h@2x.png in Resources */,
+				958D17861602547600FAD2F8 /* dinesafe-test.xml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -322,6 +340,8 @@
 				95EA8E401600E015009FF5A5 /* BDSISolutionsViewController.m in Sources */,
 				95EA8E451600E168009FF5A5 /* BDSIPassbookViewController.m in Sources */,
 				9492B78A16010AA7006E9C2E /* BDSIRestaurantListViewController.m in Sources */,
+				95EA8E59160125A1009FF5A5 /* BDSIDineSafeDataLoader.m in Sources */,
+				958D17821602493A00FAD2F8 /* InspectionReport.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
