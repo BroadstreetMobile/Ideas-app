@@ -32,7 +32,7 @@
 
     // TODO: uncomment the line below to have test data added
     // [self loadTestData];
-    NSString *localFile = @"dinesafe-test.xml";
+    NSString *localFile = @"dinesafe-full.xml";
     [self loadDineSafeDataFromFile:localFile];
 
     return YES;

@@ -22,12 +22,12 @@
 @property (nonatomic, strong) NSMutableString *currentParsedCharacterData;
 @property (nonatomic) NSDateFormatter *dateFormatter;
 @property (nonatomic) BDSIAppDelegate *appDelegate;
-@property (nonatomic) NSManagedObjectContext *manageObjectContext;
+@property (nonatomic) NSManagedObjectContext *managedObjectContext;
 @end
 
 @implementation BDSIDineSafeDataLoader
 @synthesize appDelegate = _appDelegate;
-@synthesize manageObjectContext = _manageObjectContext;
+@synthesize managedObjectContext = _manageObjectContext;
 @synthesize xmlData = _xmlData;
 @synthesize localDataUrl = _localDataUrl;
 @synthesize parsedEstablishmentCount = _parsedEstablishmentCount;
@@ -51,8 +51,10 @@ BOOL accumulatingParsedCharacterData = NO;
             return nil;
         }
         
+        [self dateFormatter];
+        
         self.appDelegate = [[UIApplication sharedApplication] delegate];
-        self.manageObjectContext = self.appDelegate.managedObjectContext;
+        self.managedObjectContext = self.appDelegate.managedObjectContext;
         
         // load the file
         self.localDataUrl = [NSURL fileURLWithPath:filePath];
@@ -81,38 +83,36 @@ BOOL accumulatingParsedCharacterData = NO;
 // On-demand initializer for read-only property.
 - (NSDateFormatter *)dateFormatter
 {
-    if (self.dateFormatter == nil) {
-        self.dateFormatter = [[NSDateFormatter alloc] init];
-        [self.dateFormatter setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:0]];
-        [self.dateFormatter setDateStyle:NSDateFormatterMediumStyle];
-        [self.dateFormatter setTimeStyle:NSDateFormatterMediumStyle];
+    if (_dateFormatter == nil) {
+        _dateFormatter = [[NSDateFormatter alloc] init];
+        [_dateFormatter setDateFormat:@"YYYY-MM-DD"];
     }
-    return self.dateFormatter;
+    return _dateFormatter;
 }
 
 #pragma mark -
 #pragma mark Parser constants
 
 // FIXME: for testing, limit the number of items parsed
-static const const NSInteger kMaximumNumberOfRowsToParse = 50;
+static const const NSInteger kMaximumNumberOfRowsToParse = 7;
 
 
 // Reduce potential parsing errors by using string constants declared in a single place.
 static NSString * const kRowElementName = @"ROW";
 static NSString * const kRowID = @"ROW_ID";
 static NSString * const kEstablishmentID = @"ESTABLISHMENT_ID";
-static NSString * const kEstablishmentName = @"establishment_name";
-static NSString * const kInspectionID = @"inspection_id";
-static NSString * const kEstablishmentType = @"establishmenttype";
-static NSString * const kEstablishmentAddress = @"establishment_address";
-static NSString * const kEstablishmentStatus = @"establishment_status";
-static NSString * const kInspectionsPerYear = @"minimum_inspections_peryear";
-static NSString * const kInfractionDetails = @"infraction_details";
+static NSString * const kEstablishmentName = @"ESTABLISHMENT_NAME";
+static NSString * const kInspectionID = @"INSPECTION_ID";
+static NSString * const kEstablishmentType = @"ESTABLISHMENTTYPE";
+static NSString * const kEstablishmentAddress = @"ESTABLISHMENT_ADDRESS";
+static NSString * const kEstablishmentStatus = @"ESTABLISHMENT_STATUS";
+static NSString * const kInspectionsPerYear = @"MINIMUM_INSPECTIONS_PERYEAR";
+static NSString * const kInfractionDetails = @"INFRACTION_DETAILS";
 static NSString * const kInspectionDate = @"INSPECTION_DATE";
-static NSString * const kSeverity = @"severity";
-static NSString * const kAction = @"action";
-static NSString * const kCourtOutcome = @"court_outcome";
-static NSString * const kAmountFined = @"amount_fined";
+static NSString * const kSeverity = @"SEVERITY";
+static NSString * const kAction = @"ACTION";
+static NSString * const kCourtOutcome = @"COURT_OUTCOME";
+static NSString * const kAmountFined = @"AMOUNT_FINED";
 
 #pragma mark -
 #pragma mark NSXMLParser delegate methods
@@ -130,13 +130,14 @@ static NSString * const kAmountFined = @"amount_fined";
         // and other parser errors.
         //
         didAbortParsing = YES;
-        [parser abortParsing];
+        [parser abortParsing];        
     }
     
     if ([elementName isEqualToString:kRowElementName])
     {
         // set up a new report to whcih we add the attributes as the parser reaches them
-        self.currentInspectionReport = [NSEntityDescription insertNewObjectForEntityForName:[InspectionReport description] inManagedObjectContext:self.manageObjectContext];
+        self.currentInspectionReport = [NSEntityDescription insertNewObjectForEntityForName:[InspectionReport description] inManagedObjectContext:self.managedObjectContext];
+        //[self.currentInspectionReport setEstablishment_name:@"aaa"];
     }
     else if ([elementName isEqualToString:kRowID] ||
                [elementName isEqualToString:kEstablishmentID] ||
@@ -162,10 +163,17 @@ static NSString * const kAmountFined = @"amount_fined";
     
     if ([elementName isEqualToString:kRowElementName])
     {
-        [self.manageObjectContext save:nil];
+//        [self.currentInspectionReport setEstablishment_name:@"bbbb"];
         
-        [self.currentParseBatch addObject:self.currentInspectionReport];
-        // add this report to the data context
+        
+        NSLog(@"Report: %@", self.currentInspectionReport);
+        
+        NSError *error = nil;
+        [self.managedObjectContext save:&error];
+        if (error)
+        {
+            NSLog(@"Error: %@", [error description]);
+        }
         
         self.parsedEstablishmentCount++;
         // persist this data by adding the object to the data context
@@ -179,17 +187,56 @@ static NSString * const kAmountFined = @"amount_fined";
     if ([elementName isEqualToString:kEstablishmentID])
     {
         int est_id = [self.currentParsedCharacterData intValue];
-        self.currentInspectionReport.establishment_id = [NSNumber numberWithInt:est_id];
+        NSNumber *estab_id = [NSNumber numberWithInt: est_id];
+        self.currentInspectionReport.establishment_id = [estab_id copy];
+        NSLog(@"%i", [self.currentInspectionReport.establishment_id intValue]);
     }
     else
     if ( [elementName isEqualToString:kInspectionDate])
     {
-        self.currentInspectionReport.inspection_date = [NSDate date];   //[self.dateFormatter dateFromString:self.currentParsedCharacterData];
+        
+        NSString *ins_date = self.currentParsedCharacterData;
+        self.currentInspectionReport.inspection_date = [_dateFormatter dateFromString:ins_date];
+        NSLog(@"%@", ins_date);
     }
+    else
+    if ( [elementName isEqualToString:kEstablishmentName])
+        {
+            NSString *est_name = [self.currentParsedCharacterData copy];
+            self.currentInspectionReport.establishment_name = est_name;
+            NSLog(@"%@", self.currentInspectionReport.establishment_name);
+        }
+    else
+    if ( [elementName isEqualToString:kEstablishmentType])
+            {
+                NSString *est_type = [self.currentParsedCharacterData copy];
+                self.currentInspectionReport.establishment_type = est_type;
+            }
+   else
+    if ( [elementName isEqualToString:kEstablishmentAddress])
+            {
+                NSString *est_add = [self.currentParsedCharacterData copy];
+                    self.currentInspectionReport.establishment_address = est_add;
+            }
+    else
+    if ( [elementName isEqualToString:kEstablishmentStatus])
+            {
+                NSString *est_status = [self.currentParsedCharacterData copy];
+                self.currentInspectionReport.inspection_status = est_status;
+            }
+    else
+    if ([elementName isEqualToString:kAmountFined])
+                {
+                    double est_amt_fine = [self.currentParsedCharacterData doubleValue];
+                    self.currentInspectionReport.establishment_id = [NSNumber numberWithDouble:est_amt_fine];
+                
+                }
+
     else
     {
         // kUpdatedElementName can be found outside an entry element (i.e. in the XML header)
         // so don't process it here.
+        NSLog(@"dropped through all IF cases looking for %@", elementName);
     }
     
     // Stop accumulating parsed character data. We won't start again until specific elements begin.
