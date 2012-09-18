@@ -4,7 +4,7 @@
         <attribute name="timeStamp" optional="YES" attributeType="Date" syncable="YES"/>
     </entity>
     <entity name="InspectionReport" representedClassName="InspectionReport" syncable="YES">
-        <attribute name="amount_fined" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="amount_fined" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
         <attribute name="establishment_address" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="establishment_id" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
         <attribute name="establishment_name" optional="YES" attributeType="String" syncable="YES"/>
@@ -23,9 +23,9 @@
         <attribute name="url" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Event" positionX="0" positionY="0" width="0" height="0"/>
-        <element name="InspectionReport" positionX="0" positionY="0" width="0" height="0"/>
-        <element name="RestaurantSafetyInfo" positionX="0" positionY="0" width="0" height="0"/>
-        <element name="WhitePaper" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="Event" positionX="0" positionY="0" width="128" height="58"/>
+        <element name="InspectionReport" positionX="0" positionY="0" width="128" height="148"/>
+        <element name="RestaurantSafetyInfo" positionX="0" positionY="0" width="128" height="103"/>
+        <element name="WhitePaper" positionX="0" positionY="0" width="128" height="73"/>
     </elements>
 </model>

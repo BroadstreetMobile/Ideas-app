@@ -32,19 +32,19 @@
 
     // TODO: uncomment the line below to have test data added
     // [self loadTestData];
-    NSString *localFile = @"dinesafe-full.xml";
-    [self loadDineSafeDataFromFile:localFile];
+    //NSString *localFile = @"dinesafe-full.xml";
+    //[self loadDineSafeDataFromFile:localFile];
 
     return YES;
 }
 
 // TODO: decide if we need to parse the DineSafe data
-- (BOOL)shouldLoadDineSafeData
+/*- (BOOL)shouldLoadDineSafeData
 {
     return YES;
-}
+}*/
 
-- (void)loadDineSafeDataFromFile:(NSString *)localFileName
+/*- (void)loadDineSafeDataFromFile:(NSString *)localFileName
 {
     if ( [self shouldLoadDineSafeData])
     {
@@ -54,9 +54,9 @@
             // Houston, we have a problem...
         }
     }
-}
+}*/
 
-- (void)loadTestData
+/*- (void)loadTestData
 {
     NSManagedObjectContext *context = [self managedObjectContext];
     RestaurantSafetyInfo *restaurantSafetyInfo = [NSEntityDescription
@@ -83,7 +83,7 @@
         NSLog(@"Whoops, couldn't save: %@", [error localizedDescription]);
     }
     
-}
+}*/
 
 - (void)applicationWillResignActive:(UIApplication *)application
 {

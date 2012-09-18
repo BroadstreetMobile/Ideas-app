@@ -93,7 +93,7 @@
     
     NSFetchRequest *fetchRequestSafeRest = [[NSFetchRequest alloc] init];
     // Edit the entity name as appropriate.
-    NSEntityDescription *entitySafeRest = [NSEntityDescription entityForName:@"RestaurantSafetyInfo" inManagedObjectContext:self.managedObjectContext];
+    NSEntityDescription *entitySafeRest = [NSEntityDescription entityForName:@"InspectionReport" inManagedObjectContext:self.managedObjectContext];
     [fetchRequestSafeRest setEntity:entitySafeRest];
     
     // Set the batch size to a suitable number.
@@ -104,6 +104,8 @@
     NSArray *sortDescriptorsSafeRest = @[sortDescriptorSafeRest];
     
     [fetchRequestSafeRest setSortDescriptors:sortDescriptorsSafeRest];
+    
+    
     
     // Edit the section name key path and cache name if appropriate.
     // nil for section name key path means "no sections".
@@ -186,9 +188,14 @@
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath
 {
     
-    RestaurantSafetyInfo *info = [_fetchedResultsController objectAtIndexPath:indexPath];
-    cell.textLabel.text = info.establishment_type;
-    NSLog(@"Contents: %i, %@", indexPath.row, cell.textLabel.text);
+    InspectionReport *info = [_fetchedResultsController objectAtIndexPath:indexPath];
+    cell.textLabel.text = info.establishment_name;
+    cell.detailTextLabel.text = info.inspection_status;
+    NSString *imageName = [info.establishment_type stringByAppendingPathExtension:@"png"];
+                           //stringByTrimmingCharactersInSet:[NSSet setWithObject:@" "]];
+    
+    cell.imageView.image = [UIImage imageNamed:imageName];
+    //NSLog(@"Contents: %i, %@", indexPath.row, cell.textLabel.text);
     //NSManagedObject *object = [self.fetchedResultsController objectAtIndexPath:indexPath];
     //cell.textLabel.text = [[object valueForKey:@"timeStamp"] description];
 }

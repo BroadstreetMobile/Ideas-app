@@ -10,6 +10,30 @@
 //
 //  As each Establishment is parsed out of the XML, it is added to the database
 
+//SQL update statements for the database
+/*Update ZINSPECTIONREPORT SET ZESTABLISHMENT_TYPE = 'Shopping Cart' where ZESTABLISHMENT_TYPE LIKE 'Food Store (Convenience / Variety)'
+ Update ZINSPECTIONREPORT SET ZESTABLISHMENT_TYPE = 'Shopping Cart' where ZESTABLISHMENT_TYPE LIKE 'Butcher Shop'
+ Update ZINSPECTIONREPORT SET ZESTABLISHMENT_TYPE = 'Shopping Cart' where ZESTABLISHMENT_TYPE LIKE 'Fish Shop'
+ Update ZINSPECTIONREPORT SET ZESTABLISHMENT_TYPE = 'Shopping Cart' where ZESTABLISHMENT_TYPE LIKE 'Food Depot'
+ Update ZINSPECTIONREPORT SET ZESTABLISHMENT_TYPE = 'Shopping Cart' where ZESTABLISHMENT_TYPE LIKE 'Supermarket'
+ 
+ Update ZINSPECTIONREPORT SET ZESTABLISHMENT_TYPE = 'Catering' where ZESTABLISHMENT_TYPE LIKE 'Secondary School Food Services'
+ Update ZINSPECTIONREPORT SET ZESTABLISHMENT_TYPE = 'Catering' where ZESTABLISHMENT_TYPE LIKE 'Banquet Facility'
+ Update ZINSPECTIONREPORT SET ZESTABLISHMENT_TYPE = 'Catering' where ZESTABLISHMENT_TYPE LIKE 'Food Take Out'
+ Update ZINSPECTIONREPORT SET ZESTABLISHMENT_TYPE = 'Catering' where ZESTABLISHMENT_TYPE LIKE 'Food Caterer'
+ Update ZINSPECTIONREPORT SET ZESTABLISHMENT_TYPE = 'Catering' where ZESTABLISHMENT_TYPE LIKE 'Community Kitchen Meal Program'
+ 
+ 
+ Update ZINSPECTIONREPORT SET ZESTABLISHMENT_TYPE = 'Selling Cart' where ZESTABLISHMENT_TYPE LIKE 'Ice Cream / Yogurt Vendors'
+ Update ZINSPECTIONREPORT SET ZESTABLISHMENT_TYPE = 'Selling Cart' where ZESTABLISHMENT_TYPE LIKE 'Refreshment Stand (Stationary)'
+ 
+ 
+ Update ZINSPECTIONREPORT SET ZESTABLISHMENT_TYPE = 'Factory' where ZESTABLISHMENT_TYPE LIKE 'Food Processing Plant'
+ 
+ Update ZINSPECTIONREPORT SET ZESTABLISHMENT_TYPE = 'Restaurant' where ZESTABLISHMENT_TYPE LIKE 'Bakery'
+ Update ZINSPECTIONREPORT SET ZESTABLISHMENT_TYPE = 'Restaurant' where ZESTABLISHMENT_TYPE LIKE 'Food Court Vendor'
+ */
+
 #import "BDSIDineSafeDataLoader.h"
 #import "RestaurantSafetyInfo.h"
 #import "InspectionReport.h"
@@ -94,7 +118,7 @@ BOOL accumulatingParsedCharacterData = NO;
 #pragma mark Parser constants
 
 // FIXME: for testing, limit the number of items parsed
-static const const NSInteger kMaximumNumberOfRowsToParse = 7;
+static const const NSInteger kMaximumNumberOfRowsToParse = 1000;
 
 
 // Reduce potential parsing errors by using string constants declared in a single place.
@@ -187,9 +211,9 @@ static NSString * const kAmountFined = @"AMOUNT_FINED";
     if ([elementName isEqualToString:kEstablishmentID])
     {
         int est_id = [self.currentParsedCharacterData intValue];
-        NSNumber *estab_id = [NSNumber numberWithInt: est_id];
-        self.currentInspectionReport.establishment_id = [estab_id copy];
-        NSLog(@"%i", [self.currentInspectionReport.establishment_id intValue]);
+        //NSNumber *estab_id = [NSNumber numberWithInt: est_id];
+        self.currentInspectionReport.establishment_id = [NSNumber numberWithInt: est_id];
+        //NSLog(@"%i", [self.currentInspectionReport.establishment_id intValue]);
     }
     else
     if ( [elementName isEqualToString:kInspectionDate])
@@ -228,7 +252,8 @@ static NSString * const kAmountFined = @"AMOUNT_FINED";
     if ([elementName isEqualToString:kAmountFined])
                 {
                     double est_amt_fine = [self.currentParsedCharacterData doubleValue];
-                    self.currentInspectionReport.establishment_id = [NSNumber numberWithDouble:est_amt_fine];
+                    self.currentInspectionReport.amount_fined = [NSNumber numberWithDouble:est_amt_fine];
+                    //self.currentInspectionReport.amount_fined = est_amt_fine;
                 
                 }
 

@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "RestaurantSafetyInfo.h"
+#import "InspectionReport.h"
 #import <CoreData/CoreData.h>
 
 @interface BDSIRestaurantListViewController : UITableViewController <NSFetchedResultsControllerDelegate>

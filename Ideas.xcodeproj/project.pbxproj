@@ -10,6 +10,11 @@
 		94105C151603813F00D9E201 /* dinesafe-test.xml in Resources */ = {isa = PBXBuildFile; fileRef = 94105C141603813F00D9E201 /* dinesafe-test.xml */; };
 		9492B78A16010AA7006E9C2E /* BDSIRestaurantListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9492B78916010AA7006E9C2E /* BDSIRestaurantListViewController.m */; };
 		94AE07081603C42600E1D16E /* dinesafe-full.xml in Resources */ = {isa = PBXBuildFile; fileRef = 94AE07071603C42600E1D16E /* dinesafe-full.xml */; };
+		94AE07101608D1F100E1D16E /* Factory.png in Resources */ = {isa = PBXBuildFile; fileRef = 94AE070B1608D1F100E1D16E /* Factory.png */; };
+		94AE07111608D1F100E1D16E /* Restaurant.png in Resources */ = {isa = PBXBuildFile; fileRef = 94AE070C1608D1F100E1D16E /* Restaurant.png */; };
+		94AE07131608D1F100E1D16E /* Shopping Cart.png in Resources */ = {isa = PBXBuildFile; fileRef = 94AE070E1608D1F100E1D16E /* Shopping Cart.png */; };
+		94AE07161608E5B800E1D16E /* Catering.png in Resources */ = {isa = PBXBuildFile; fileRef = 94AE07141608E5B800E1D16E /* Catering.png */; };
+		94AE07171608E5B800E1D16E /* Selling Cart.png in Resources */ = {isa = PBXBuildFile; fileRef = 94AE07151608E5B800E1D16E /* Selling Cart.png */; };
 		951070A215F69D9B00E8E336 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 951070A115F69D9B00E8E336 /* UIKit.framework */; };
 		951070A415F69D9B00E8E336 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 951070A315F69D9B00E8E336 /* Foundation.framework */; };
 		951070A615F69D9B00E8E336 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 951070A515F69D9B00E8E336 /* CoreGraphics.framework */; };
@@ -43,6 +48,11 @@
 		9492B78816010AA7006E9C2E /* BDSIRestaurantListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDSIRestaurantListViewController.h; sourceTree = "<group>"; };
 		9492B78916010AA7006E9C2E /* BDSIRestaurantListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDSIRestaurantListViewController.m; sourceTree = "<group>"; };
 		94AE07071603C42600E1D16E /* dinesafe-full.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "dinesafe-full.xml"; sourceTree = "<group>"; };
+		94AE070B1608D1F100E1D16E /* Factory.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Factory.png; sourceTree = "<group>"; };
+		94AE070C1608D1F100E1D16E /* Restaurant.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Restaurant.png; sourceTree = "<group>"; };
+		94AE070E1608D1F100E1D16E /* Shopping Cart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Shopping Cart.png"; sourceTree = "<group>"; };
+		94AE07141608E5B800E1D16E /* Catering.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Catering.png; sourceTree = "<group>"; };
+		94AE07151608E5B800E1D16E /* Selling Cart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Selling Cart.png"; sourceTree = "<group>"; };
 		9510709D15F69D9B00E8E336 /* Ideas.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ideas.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		951070A115F69D9B00E8E336 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		951070A315F69D9B00E8E336 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -171,6 +181,11 @@
 		951070CB15F69FDF00E8E336 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				94AE07141608E5B800E1D16E /* Catering.png */,
+				94AE07151608E5B800E1D16E /* Selling Cart.png */,
+				94AE070B1608D1F100E1D16E /* Factory.png */,
+				94AE070C1608D1F100E1D16E /* Restaurant.png */,
+				94AE070E1608D1F100E1D16E /* Shopping Cart.png */,
 				951070CE15F6D83B00E8E336 /* B-icon.png */,
 				951070CF15F6D83B00E8E336 /* B-icon@2x.png */,
 				951070C915F69E8E00E8E336 /* Bx57.png */,
@@ -323,6 +338,11 @@
 				958D178416024D9200FAD2F8 /* Default-568h@2x.png in Resources */,
 				94105C151603813F00D9E201 /* dinesafe-test.xml in Resources */,
 				94AE07081603C42600E1D16E /* dinesafe-full.xml in Resources */,
+				94AE07101608D1F100E1D16E /* Factory.png in Resources */,
+				94AE07111608D1F100E1D16E /* Restaurant.png in Resources */,
+				94AE07131608D1F100E1D16E /* Shopping Cart.png in Resources */,
+				94AE07161608E5B800E1D16E /* Catering.png in Resources */,
+				94AE07171608E5B800E1D16E /* Selling Cart.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
