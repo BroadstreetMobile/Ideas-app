@@ -30,21 +30,28 @@
         controller.managedObjectContext = self.managedObjectContext;
     }
 
-    // TODO: uncomment the line below to have test data added
-    // [self loadTestData];
-    //NSString *localFile = @"dinesafe-full.xml";
-    //[self loadDineSafeDataFromFile:localFile];
+    if ( [self shouldLoadDineSafeData] )
+    {
+        NSString *localFile = @"dinesafe-full.xml";
+        [self loadDineSafeDataFromFile:localFile];
+    }
 
     return YES;
 }
 
-// TODO: decide if we need to parse the DineSafe data
-/*- (BOOL)shouldLoadDineSafeData
+- (BOOL)shouldLoadDineSafeData
 {
-    return YES;
-}*/
+    if ( [[NSUserDefaults standardUserDefaults] boolForKey:@"isDataLoaded"] )
+    {
+        return NO;
+    }
+    else
+    {
+        return YES;
+    }
+}
 
-/*- (void)loadDineSafeDataFromFile:(NSString *)localFileName
+- (void)loadDineSafeDataFromFile:(NSString *)localFileName
 {
     if ( [self shouldLoadDineSafeData])
     {
@@ -53,37 +60,11 @@
         {
             // Houston, we have a problem...
         }
+        else{
+            [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"isDataLoaded"];
+        }
     }
-}*/
-
-/*- (void)loadTestData
-{
-    NSManagedObjectContext *context = [self managedObjectContext];
-    RestaurantSafetyInfo *restaurantSafetyInfo = [NSEntityDescription
-                                                  insertNewObjectForEntityForName:@"RestaurantSafetyInfo"
-                                                  inManagedObjectContext:context];
-    
-    restaurantSafetyInfo.establishment_name = @"Fractured Prunes";
-    restaurantSafetyInfo.establishment_type = @"Shop";
-    restaurantSafetyInfo.establishment_status = @"Pass";
-    restaurantSafetyInfo.safety_action = @"Test";
-    
-    
-    RestaurantSafetyInfo *restaurantSafetyInfo1 = [NSEntityDescription
-                                                   insertNewObjectForEntityForName:@"RestaurantSafetyInfo"
-                                                   inManagedObjectContext:context];
-    restaurantSafetyInfo1.establishment_name = @"MeatLoaf";
-    restaurantSafetyInfo1.establishment_type = @"Cart";
-    restaurantSafetyInfo1.establishment_status = @"Fail";
-    restaurantSafetyInfo1.safety_action = @"Test";
-    
-    
-    NSError *error;
-    if (![context save:&error]) {
-        NSLog(@"Whoops, couldn't save: %@", [error localizedDescription]);
-    }
-    
-}*/
+}
 
 - (void)applicationWillResignActive:(UIApplication *)application
 {
