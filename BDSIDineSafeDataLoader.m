@@ -11,7 +11,8 @@
 //  As each Establishment is parsed out of the XML, it is added to the database
 
 //SQL update statements for the database
-/*Update ZINSPECTIONREPORT SET ZESTABLISHMENT_TYPE = 'Shopping Cart' where ZESTABLISHMENT_TYPE LIKE 'Food Store (Convenience / Variety)'
+/*
+ Update ZINSPECTIONREPORT SET ZESTABLISHMENT_TYPE = 'Shopping Cart' where ZESTABLISHMENT_TYPE LIKE 'Food Store (Convenience / Variety)'
  Update ZINSPECTIONREPORT SET ZESTABLISHMENT_TYPE = 'Shopping Cart' where ZESTABLISHMENT_TYPE LIKE 'Butcher Shop'
  Update ZINSPECTIONREPORT SET ZESTABLISHMENT_TYPE = 'Shopping Cart' where ZESTABLISHMENT_TYPE LIKE 'Fish Shop'
  Update ZINSPECTIONREPORT SET ZESTABLISHMENT_TYPE = 'Shopping Cart' where ZESTABLISHMENT_TYPE LIKE 'Food Depot'
@@ -218,50 +219,46 @@ static NSString * const kAmountFined = @"AMOUNT_FINED";
     else
     if ( [elementName isEqualToString:kInspectionDate])
     {
-        
         NSString *ins_date = self.currentParsedCharacterData;
         self.currentInspectionReport.inspection_date = [_dateFormatter dateFromString:ins_date];
         NSLog(@"%@", ins_date);
     }
     else
     if ( [elementName isEqualToString:kEstablishmentName])
-        {
-            NSString *est_name = [self.currentParsedCharacterData copy];
-            self.currentInspectionReport.establishment_name = est_name;
-            NSLog(@"%@", self.currentInspectionReport.establishment_name);
-        }
+    {
+        NSString *est_name = [self.currentParsedCharacterData copy];
+        self.currentInspectionReport.establishment_name = est_name;
+        NSLog(@"%@", self.currentInspectionReport.establishment_name);
+    }
     else
     if ( [elementName isEqualToString:kEstablishmentType])
-            {
-                NSString *est_type = [self.currentParsedCharacterData copy];
-                self.currentInspectionReport.establishment_type = est_type;
-            }
-   else
+    {
+        NSString *est_type = [self.currentParsedCharacterData copy];
+        self.currentInspectionReport.establishment_type = est_type;
+    }
+    else
     if ( [elementName isEqualToString:kEstablishmentAddress])
-            {
-                NSString *est_add = [self.currentParsedCharacterData copy];
-                    self.currentInspectionReport.establishment_address = est_add;
-            }
+    {
+        NSString *est_add = [self.currentParsedCharacterData copy];
+            self.currentInspectionReport.establishment_address = est_add;
+    }
     else
     if ( [elementName isEqualToString:kEstablishmentStatus])
-            {
-                NSString *est_status = [self.currentParsedCharacterData copy];
-                self.currentInspectionReport.inspection_status = est_status;
-            }
+    {
+        NSString *est_status = [self.currentParsedCharacterData copy];
+        self.currentInspectionReport.inspection_status = est_status;
+    }
     else
     if ([elementName isEqualToString:kAmountFined])
-                {
-                    double est_amt_fine = [self.currentParsedCharacterData doubleValue];
-                    self.currentInspectionReport.amount_fined = [NSNumber numberWithDouble:est_amt_fine];
-                    //self.currentInspectionReport.amount_fined = est_amt_fine;
-                
-                }
-
+    {
+        double est_amt_fine = [self.currentParsedCharacterData doubleValue];
+        self.currentInspectionReport.amount_fined = (NSDecimalNumber *)[NSDecimalNumber numberWithDouble:est_amt_fine];
+    }
     else
     {
         // kUpdatedElementName can be found outside an entry element (i.e. in the XML header)
         // so don't process it here.
-        NSLog(@"dropped through all IF cases looking for %@", elementName);
+        // NSLog(@"dropped through all IF cases looking for %@", elementName);
     }
     
     // Stop accumulating parsed character data. We won't start again until specific elements begin.
