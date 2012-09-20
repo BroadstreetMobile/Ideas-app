@@ -72,15 +72,26 @@
 
 #pragma mark - Table view delegate
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     */
+    if ( [segue.identifier isEqualToString:@"showDineSafeDetails"] )
+    {
+        UITableViewCell *cell = (UITableViewCell *)sender;
+        NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
+        
+        BDSIDineSafeDetailViewController *detailVC = [segue destinationViewController];
+        InspectionReport *currentReport = (InspectionReport *)[NSEntityDescription insertNewObjectForEntityForName:@"InspectionReport" inManagedObjectContext:self.managedObjectContext];
+        
+        NSDictionary *tempDict = (NSDictionary *)[_fetchedResultsController objectAtIndexPath:indexPath];
+        currentReport.inspection_date = [tempDict valueForKey:@"inspection_date"];
+        currentReport.inspection_status = [tempDict valueForKey:@"inspection_status"];
+        currentReport.establishment_id = [tempDict valueForKey:@"establishment_id"];
+        currentReport.establishment_name = [tempDict valueForKey:@"establishment_name"];
+        currentReport.establishment_type = [tempDict valueForKey:@"establishment_type"];
+        currentReport.establishment_address = [tempDict valueForKey:@"establishment_address"];
+        
+        [detailVC setInspectionReport:currentReport];
+    }
 }
 
 #pragma mark - Fetched results controller
@@ -107,7 +118,7 @@
     
     /// start remove dupes ///
     [fetchRequestSafeRest setResultType:NSDictionaryResultType];
-    [fetchRequestSafeRest setPropertiesToFetch:@[@"establishment_name", @"establishment_id", @"establishment_type", @"inspection_status"]];
+    [fetchRequestSafeRest setPropertiesToFetch:@[@"establishment_name", @"establishment_id", @"establishment_type", @"establishment_address", @"inspection_date", @"inspection_status"]];
     [fetchRequestSafeRest setReturnsDistinctResults:YES];
     /// end remove dupes ///
     
@@ -137,7 +148,7 @@
 {
     NSMutableDictionary *info = (NSMutableDictionary *)[_fetchedResultsController objectAtIndexPath:indexPath];
     cell.textLabel.text = [info valueForKey:@"establishment_name"];
-    cell.detailTextLabel.text = [NSString stringWithFormat:@"%@ %i", [info valueForKey:@"inspection_status"], [[info valueForKey:@"establishment_id"] intValue]];
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"%@", [info valueForKey:@"inspection_status"]];
     NSString *imageName = [[info valueForKey:@"establishment_type"] stringByAppendingPathExtension:@"png"];
     
     cell.imageView.image = [UIImage imageNamed:imageName];

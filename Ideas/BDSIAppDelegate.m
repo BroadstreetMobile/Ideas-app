@@ -30,16 +30,16 @@
         controller.managedObjectContext = self.managedObjectContext;
     }
 
-    if ( [self shouldLoadDineSafeData] )
+   /* if ( [self shouldLoadDineSafeData] )
     {
         NSString *localFile = @"dinesafe-full.xml";
         [self loadDineSafeDataFromFile:localFile];
-    }
+    }*/
 
     return YES;
 }
 
-- (BOOL)shouldLoadDineSafeData
+/*- (BOOL)shouldLoadDineSafeData
 {
     if ( [[NSUserDefaults standardUserDefaults] boolForKey:@"isDataLoaded"] )
     {
@@ -49,9 +49,9 @@
     {
         return YES;
     }
-}
+}*/
 
-- (void)loadDineSafeDataFromFile:(NSString *)localFileName
+/*- (void)loadDineSafeDataFromFile:(NSString *)localFileName
 {
     if ( [self shouldLoadDineSafeData])
     {
@@ -64,7 +64,7 @@
             [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"isDataLoaded"];
         }
     }
-}
+}*/
 
 - (void)applicationWillResignActive:(UIApplication *)application
 {
