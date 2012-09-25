@@ -20,6 +20,7 @@
 		94AE071F160A567700E1D16E /* Fail.png in Resources */ = {isa = PBXBuildFile; fileRef = 94AE071C160A567700E1D16E /* Fail.png */; };
 		94AE0720160A567700E1D16E /* Pass.png in Resources */ = {isa = PBXBuildFile; fileRef = 94AE071D160A567700E1D16E /* Pass.png */; };
 		94AE0724160B98F300E1D16E /* city-toronto-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 94AE0723160B98F300E1D16E /* city-toronto-logo.png */; };
+		94AE0727160CF3DB00E1D16E /* BDSISlowDineSafeListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94AE0726160CF3DB00E1D16E /* BDSISlowDineSafeListViewController.m */; };
 		951070A215F69D9B00E8E336 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 951070A115F69D9B00E8E336 /* UIKit.framework */; };
 		951070A415F69D9B00E8E336 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 951070A315F69D9B00E8E336 /* Foundation.framework */; };
 		951070A615F69D9B00E8E336 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 951070A515F69D9B00E8E336 /* CoreGraphics.framework */; };
@@ -64,6 +65,8 @@
 		94AE071C160A567700E1D16E /* Fail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Fail.png; sourceTree = "<group>"; };
 		94AE071D160A567700E1D16E /* Pass.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Pass.png; sourceTree = "<group>"; };
 		94AE0723160B98F300E1D16E /* city-toronto-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "city-toronto-logo.png"; sourceTree = "<group>"; };
+		94AE0725160CF3DA00E1D16E /* BDSISlowDineSafeListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BDSISlowDineSafeListViewController.h; path = ../BDSISlowDineSafeListViewController.h; sourceTree = "<group>"; };
+		94AE0726160CF3DB00E1D16E /* BDSISlowDineSafeListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BDSISlowDineSafeListViewController.m; path = ../BDSISlowDineSafeListViewController.m; sourceTree = "<group>"; };
 		9510709D15F69D9B00E8E336 /* Ideas.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ideas.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		951070A115F69D9B00E8E336 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		951070A315F69D9B00E8E336 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -163,6 +166,8 @@
 				951070B315F69D9B00E8E336 /* BDSIAppDelegate.m */,
 				951070B515F69D9C00E8E336 /* MainStoryboard_iPhone.storyboard */,
 				94AE0718160A231C00E1D16E /* BDSIDineSafeDetailViewController.h */,
+				94AE0725160CF3DA00E1D16E /* BDSISlowDineSafeListViewController.h */,
+				94AE0726160CF3DB00E1D16E /* BDSISlowDineSafeListViewController.m */,
 				94AE0719160A231C00E1D16E /* BDSIDineSafeDetailViewController.m */,
 				9492B78816010AA7006E9C2E /* BDSIRestaurantListViewController.h */,
 				9492B78916010AA7006E9C2E /* BDSIRestaurantListViewController.m */,
@@ -388,6 +393,7 @@
 				95EA8E59160125A1009FF5A5 /* BDSIDineSafeDataLoader.m in Sources */,
 				958D17821602493A00FAD2F8 /* InspectionReport.m in Sources */,
 				94AE071A160A231D00E1D16E /* BDSIDineSafeDetailViewController.m in Sources */,
+				94AE0727160CF3DB00E1D16E /* BDSISlowDineSafeListViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

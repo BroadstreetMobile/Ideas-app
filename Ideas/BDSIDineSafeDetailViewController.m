@@ -15,12 +15,12 @@
 @implementation BDSIDineSafeDetailViewController
 
 @synthesize inspectionReport = _inspectionReport;
-@synthesize inspectionTorontoLogo = _inspectionTorontoLogo;
+@synthesize dineSafeDetailOuterShell = _dineSafeDetailOuterShell;
+@synthesize torontoPublicHealthLabel = _torontoPublicHealthLabel;
 @synthesize inspectionStatusLabel = _inspectionStatusLabel;
 @synthesize addressLabel= _addressLabel;
 @synthesize inspectionDateLabel = _inspectionDateLabel;
-@synthesize torontoPublicHealthLabel = _torontoPublicHealthLabel;
-@synthesize dineSafeDetailOuterShell = _dineSafeDetailOuterShell;
+@synthesize inspectionTorontoLogo = _inspectionTorontoLogo;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -35,22 +35,19 @@
 {
     [super viewDidLoad];
     
-    
+    //Return the managed context from AppDelegate
     BDSIAppDelegate *appDelegate = (BDSIAppDelegate *)[[UIApplication sharedApplication] delegate];
     self.managedObjectContext = appDelegate.managedObjectContext;
     
-    //UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 320, 480)];
-       
-    //BDSIAppDelegate *appDelegate = (BDSIAppDelegate *)[[UIApplication sharedApplication] delegate];
-    //self.managedObjectContext = appDelegate.managedObjectContext;
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
+    //define view details
     [super viewWillAppear:animated];
     [self.navigationController setNavigationBarHidden:NO];
     [self.navigationItem setTitle:@"Dine Safety Details"];
-    
+
     if ([self.inspectionReport.inspection_status isEqualToString:@"Pass"]) {
         [self.dineSafeDetailOuterShell setBackgroundColor: [UIColor greenColor]];
     }
@@ -61,16 +58,15 @@
     else if ([self.inspectionReport.inspection_status isEqualToString:@"Conditional Pass"]){
         [self.dineSafeDetailOuterShell setBackgroundColor: [UIColor yellowColor]];
     }
+    else {
+        [self.dineSafeDetailOuterShell setBackgroundColor: [UIColor grayColor]];
+    }
+    
+    //define label details
     
     [self.torontoPublicHealthLabel setText: @"TORONTO PUBLIC HEALTH"];
     [self.torontoPublicHealthLabel setBackgroundColor:[UIColor blueColor]];
     [self.torontoPublicHealthLabel setTextColor: [UIColor whiteColor]];
-    
-    
-    /*NSString *status = self.inspectionReport.inspection_status;
-    [self.statusImageView setImage:[UIImage imageNamed:[NSString stringWithFormat:@"%@.png",status]]];
-    [self.inspectionTorontoLogo setImage:[UIImage imageNamed: @"city-toronto-logo.png"]];*/
-    
     
     [self.inspectionStatusLabel setText: self.inspectionReport.inspection_status];
     

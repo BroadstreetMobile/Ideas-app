@@ -1,19 +1,19 @@
 //
-//  BDSIRestaurantListViewController.m
+//  BDSISlowDineSafeListViewController.m
 //  Ideas
 //
 //  Created by tabinda siddiqi on 2012-09-12.
 //  Copyright (c) 2012 BroadstreetMobile. All rights reserved.
 //
 
-#import "BDSIRestaurantListViewController.h"
+#import "BDSISlowDineSafeListViewController.h"
 
 
-@interface BDSIRestaurantListViewController ()
+@interface BDSISlowDineSafeListViewController ()
 
 @end
 
-@implementation BDSIRestaurantListViewController
+@implementation BDSISlowDineSafeListViewController
 @synthesize fetchedResultsController = _fetchedResultsController;
 
 - (id)initWithStyle:(UITableViewStyle)style
@@ -30,7 +30,7 @@
     [super viewDidLoad];
     
     BDSIAppDelegate *appDelegate = (BDSIAppDelegate *)[[UIApplication sharedApplication] delegate];
-    self.managedObjectContext = appDelegate.managedObjectContext;    
+    self.managedObjectContext = appDelegate.managedObjectContext;
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -62,21 +62,49 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"restaurantCell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    static NSString *CellIdentifier = @"slowDineSafeCell";
+    //UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
+    
+    [cell setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
     
     [self configureCell:cell atIndexPath:indexPath];
+    
+    
+    
     
     return cell;
 }
 
+//Returns the number of distinct dine safe establishment types given a type as a parameter
+- (NSNumber *)findEstTypeCount:(NSString *)est_type {
+    
+    //Create an NSFetchRequest to query the DineSafe entity.
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription
+                                   entityForName:@"InspectionReport" inManagedObjectContext:self.managedObjectContext];
+    [fetchRequest setEntity:entity];
+    NSError *error = [[NSError alloc] init];
+    
+    //Set a predicate to filter out only the type we want from the set of records
+    [fetchRequest setPredicate:[NSPredicate predicateWithFormat:@"establishment_type LIKE %@", est_type]];
+    NSArray *numOfObjects = [self.managedObjectContext executeFetchRequest:fetchRequest error:&error];
+    NSNumber *numOfDineSafeType = [NSNumber numberWithInt:[numOfObjects count]];
+    
+    return numOfDineSafeType;
+}
+
 #pragma mark - Table view delegate
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [self performSegueWithIdentifier:@"showSlowDineSafeDetails" sender:[tableView cellForRowAtIndexPath:indexPath]];
+}
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     //Assign the segue to the right segue on story board.
     
-    if ( [segue.identifier isEqualToString:@"showDineSafeDetails"] )
+    if ( [segue.identifier isEqualToString:@"showSlowDineSafeDetails"] )
     {
         
         UITableViewCell *cell = (UITableViewCell *)sender;
@@ -149,17 +177,55 @@
     return _fetchedResultsController;
 }
 
-#pragma mark - NSFetchedResultsController delegate methods
+
 // removed from
 
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath
 {
-    NSMutableDictionary *info = (NSMutableDictionary *)[_fetchedResultsController objectAtIndexPath:indexPath];
-    cell.textLabel.text = [info valueForKey:@"establishment_name"];
-    cell.detailTextLabel.text = [NSString stringWithFormat:@"%@", [info valueForKey:@"inspection_status"]];
-    NSString *imageName = [[info valueForKey:@"establishment_type"] stringByAppendingPathExtension:@"png"];
+   //Retrieve objects from fetchedResultsController into a dictionary.
+   NSMutableDictionary *info = (NSMutableDictionary *)[_fetchedResultsController objectAtIndexPath:indexPath];
     
-    cell.imageView.image = [UIImage imageNamed:imageName];
+    //Give cells a background color
+    cell.contentView.backgroundColor = [UIColor whiteColor];
+
+    
+    //Create a label as a subview in the cell to display the dine safe title
+    UILabel *dineSafeTitle = [[UILabel alloc] initWithFrame:CGRectMake(40, 15, 250, 15)];
+    dineSafeTitle.text = [info valueForKey:@"establishment_name"];
+    [dineSafeTitle setFont:[UIFont fontWithName:@"American Typewriter" size:16]];
+    [dineSafeTitle setLineBreakMode:NSLineBreakByTruncatingTail];
+    dineSafeTitle.backgroundColor = [UIColor clearColor];
+    dineSafeTitle.alpha = 0.5;
+    
+    //Create a label as a subview in the cell to display the dine safe status
+    UILabel *dineSafeInspectionStatus = [[UILabel alloc] initWithFrame:CGRectMake(40, 30, 100, 15)];
+    dineSafeInspectionStatus.text = [info valueForKey:@"inspection_status"];
+    [dineSafeInspectionStatus setFont:[UIFont fontWithName:@"American Typewriter" size:12]];
+    dineSafeInspectionStatus.backgroundColor = [UIColor clearColor];
+    dineSafeInspectionStatus.alpha = 0.5;
+    
+    //Create a label as a subview in the cell to display the dine safe number of type
+    UILabel *dineSafeNumOfType = [[UILabel alloc] initWithFrame:CGRectMake(150, 30, 100, 15)];
+    [dineSafeNumOfType setFont:[UIFont fontWithName:@"American Typewriter" size:12]];
+    dineSafeNumOfType.backgroundColor = [UIColor clearColor];
+    dineSafeNumOfType.alpha = 0.5;
+    NSNumber *numOfDineSafeType = [self findEstTypeCount:[info valueForKey:@"establishment_type"]];
+    dineSafeNumOfType.text = [numOfDineSafeType stringValue];
+    
+    [cell.contentView addSubview:dineSafeTitle];
+    [cell.contentView addSubview:dineSafeInspectionStatus];
+    [cell.contentView addSubview:dineSafeNumOfType];
+    
+    //Create a image and image holder as a subview in the cell to display the dine safe image
+    UIImage *dineSafeImage = [[UIImage alloc] init];
+    NSString *imageName = [[info valueForKey:@"establishment_type"] stringByAppendingPathExtension:@"png"];
+    dineSafeImage = [UIImage imageNamed:imageName];
+    
+    UIImageView *dineSafeImageHolder = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 40, 40)];
+    dineSafeImageHolder.image = dineSafeImage;
+                                
+    [cell.contentView addSubview:dineSafeImageHolder];
+    
 }
 
 @end
