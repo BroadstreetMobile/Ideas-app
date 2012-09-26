@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MapKit/MapKit.h>
 
-@interface BDSIPassbookViewController : UIViewController
+@interface BDSIPassbookViewController : UIViewController <UIWebViewDelegate>
+@property (nonatomic, strong) IBOutlet UIWebView *webView;
+@property (weak, nonatomic) IBOutlet MKMapView *mapView;
 
 @end

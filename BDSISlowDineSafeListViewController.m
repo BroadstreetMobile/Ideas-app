@@ -217,9 +217,8 @@
     [cell.contentView addSubview:dineSafeNumOfType];
     
     //Create a image and image holder as a subview in the cell to display the dine safe image
-    UIImage *dineSafeImage = [[UIImage alloc] init];
     NSString *imageName = [[info valueForKey:@"establishment_type"] stringByAppendingPathExtension:@"png"];
-    dineSafeImage = [UIImage imageNamed:imageName];
+    UIImage *dineSafeImage = [UIImage imageNamed:imageName];
     
     UIImageView *dineSafeImageHolder = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 40, 40)];
     dineSafeImageHolder.image = dineSafeImage;
