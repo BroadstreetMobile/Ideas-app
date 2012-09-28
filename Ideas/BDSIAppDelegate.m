@@ -21,22 +21,29 @@
     // Override point for customization after application launch.
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad)
     {
-        UISplitViewController *splitViewController = (UISplitViewController *)self.window.rootViewController;
-        UINavigationController *navigationController = [splitViewController.viewControllers lastObject];
-        splitViewController.delegate = (id)navigationController.topViewController;
-        
-        UINavigationController *masterNavigationController = splitViewController.viewControllers[0];
-        BDSIMasterViewController *controller = (BDSIMasterViewController *)masterNavigationController.topViewController;
-        controller.managedObjectContext = self.managedObjectContext;
+        [self setupControllers];
     }
-
+    
+    // load from XML
     if ( [self shouldLoadDineSafeData] )
     {
         NSString *localFile = @"dinesafe-full.xml";
-        [self loadDineSafeDataFromFile:localFile];
+        
+        [self performSelectorInBackground:@selector(loadDineSafeDataFromFile:) withObject:localFile];
     }
 
     return YES;
+}
+
+- (void)setupControllers
+{
+    UISplitViewController *splitViewController = (UISplitViewController *)self.window.rootViewController;
+    UINavigationController *navigationController = [splitViewController.viewControllers lastObject];
+    splitViewController.delegate = (id)navigationController.topViewController;
+    
+    UINavigationController *masterNavigationController = splitViewController.viewControllers[0];
+    BDSIMasterViewController *controller = (BDSIMasterViewController *)masterNavigationController.topViewController;
+    controller.managedObjectContext = self.managedObjectContext;
 }
 
 - (BOOL)shouldLoadDineSafeData
@@ -59,6 +66,7 @@
         if ( !dineSafeLoader)
         {
             // Houston, we have a problem...
+            NSLog(@"Error! Unable to launch the DineSafeLoader");
         }
         else{
             [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"isDataLoaded"];
@@ -151,34 +159,49 @@
     NSError *error = nil;
     _persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:[self managedObjectModel]];
     if (![_persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeURL options:nil error:&error]) {
-        /*
-         Replace this implementation with code to handle the error appropriately.
-         
-         abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development. 
-         
-         Typical reasons for an error here include:
-         * The persistent store is not accessible;
-         * The schema for the persistent store is incompatible with current managed object model.
-         Check the error message to determine what the actual problem was.
-         
-         
-         If the persistent store is not accessible, there is typically something wrong with the file path. Often, a file URL is pointing into the application's resources directory instead of a writeable directory.
-         
-         If you encounter schema incompatibility errors during development, you can reduce their frequency by:
-         * Simply deleting the existing store:
-         [[NSFileManager defaultManager] removeItemAtURL:storeURL error:nil]
-         
-         * Performing automatic lightweight migration by passing the following dictionary as the options parameter:
-         @{NSMigratePersistentStoresAutomaticallyOption:@YES, NSInferMappingModelAutomaticallyOption:@YES}
-         
-         Lightweight migration will only work for a limited set of schema changes; consult "Core Data Model Versioning and Data Migration Programming Guide" for details.
-         
-         */
+
         NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-        abort();
+        
+        // delete the existing store and start the creation process again
+        [self removeExistingStoreAtUrl:storeURL];
+        [self setupControllers];
     }    
     
     return _persistentStoreCoordinator;
+}
+
+/**
+ *  Delete the existing datastore from the file system.
+ *  @return BOOL YES, if the deletion was successful
+ */
+- (void)removeExistingStoreAtUrl:(NSURL *)storeUrl
+{
+    NSError *error;
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    if ( [fileManager removeItemAtURL:storeUrl error:&error] )
+    {
+        return;
+    }
+    else
+    {
+        // log the message and tell the user to update in the AppStore
+        NSString *errorMessage = @"Unable to remove the old database";
+        NSLog(@"%@", errorMessage);
+        [self showUserFatalAlertMessage:errorMessage];
+
+        //TODO: attempt a lightweight migration of the database
+        /* Performing automatic lightweight migration by passing the following dictionary as the options parameter:
+        @{NSMigratePersistentStoresAutomaticallyOption:@YES, NSInferMappingModelAutomaticallyOption:@YES}
+        
+        Lightweight migration will only work for a limited set of schema changes; consult "Core Data Model Versioning and Data Migration Programming Guide" for details.
+        */
+        return;
+    }
+}
+
+- (void)showUserFatalAlertMessage:(NSString *)message
+{
+    //TODO: add NSAlert message
 }
 
 #pragma mark - Application's Documents directory

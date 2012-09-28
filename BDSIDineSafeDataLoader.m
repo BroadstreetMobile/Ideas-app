@@ -10,36 +10,14 @@
 //
 //  As each Establishment is parsed out of the XML, it is added to the database
 
-//SQL update statements for the database
-/*
- Update ZINSPECTIONREPORT SET ZESTABLISHMENT_TYPE = 'Shopping Cart' where ZESTABLISHMENT_TYPE LIKE 'Food Store (Convenience / Variety)'
- Update ZINSPECTIONREPORT SET ZESTABLISHMENT_TYPE = 'Shopping Cart' where ZESTABLISHMENT_TYPE LIKE 'Butcher Shop'
- Update ZINSPECTIONREPORT SET ZESTABLISHMENT_TYPE = 'Shopping Cart' where ZESTABLISHMENT_TYPE LIKE 'Fish Shop'
- Update ZINSPECTIONREPORT SET ZESTABLISHMENT_TYPE = 'Shopping Cart' where ZESTABLISHMENT_TYPE LIKE 'Food Depot'
- Update ZINSPECTIONREPORT SET ZESTABLISHMENT_TYPE = 'Shopping Cart' where ZESTABLISHMENT_TYPE LIKE 'Supermarket'
- 
- Update ZINSPECTIONREPORT SET ZESTABLISHMENT_TYPE = 'Catering' where ZESTABLISHMENT_TYPE LIKE 'Secondary School Food Services'
- Update ZINSPECTIONREPORT SET ZESTABLISHMENT_TYPE = 'Catering' where ZESTABLISHMENT_TYPE LIKE 'Banquet Facility'
- Update ZINSPECTIONREPORT SET ZESTABLISHMENT_TYPE = 'Catering' where ZESTABLISHMENT_TYPE LIKE 'Food Take Out'
- Update ZINSPECTIONREPORT SET ZESTABLISHMENT_TYPE = 'Catering' where ZESTABLISHMENT_TYPE LIKE 'Food Caterer'
- Update ZINSPECTIONREPORT SET ZESTABLISHMENT_TYPE = 'Catering' where ZESTABLISHMENT_TYPE LIKE 'Community Kitchen Meal Program'
- 
- 
- Update ZINSPECTIONREPORT SET ZESTABLISHMENT_TYPE = 'Selling Cart' where ZESTABLISHMENT_TYPE LIKE 'Ice Cream / Yogurt Vendors'
- Update ZINSPECTIONREPORT SET ZESTABLISHMENT_TYPE = 'Selling Cart' where ZESTABLISHMENT_TYPE LIKE 'Refreshment Stand (Stationary)'
- 
- 
- Update ZINSPECTIONREPORT SET ZESTABLISHMENT_TYPE = 'Factory' where ZESTABLISHMENT_TYPE LIKE 'Food Processing Plant'
- 
- Update ZINSPECTIONREPORT SET ZESTABLISHMENT_TYPE = 'Restaurant' where ZESTABLISHMENT_TYPE LIKE 'Bakery'
- Update ZINSPECTIONREPORT SET ZESTABLISHMENT_TYPE = 'Restaurant' where ZESTABLISHMENT_TYPE LIKE 'Food Court Vendor'
- */
-
 #import "BDSIDineSafeDataLoader.h"
 #import "RestaurantSafetyInfo.h"
 #import "InspectionReport.h"
 
 @interface BDSIDineSafeDataLoader() <NSXMLParserDelegate>
+{
+    NSDictionary *_dineSafeEstTypeValues;
+}
 @property (nonatomic, strong) NSData *xmlData;
 @property (nonatomic) NSInteger parsedEstablishmentCount;
 @property (nonatomic, strong) InspectionReport *currentInspectionReport;
@@ -86,14 +64,48 @@ BOOL accumulatingParsedCharacterData = NO;
         
         // start parsing
         [self parseDineSafeData];
+        
     }
-
+    
     return self;
-
+    
 }
 
 - (void)parseDineSafeData
 {
+    _dineSafeEstTypeValues = [[NSDictionary alloc] initWithObjectsAndKeys:
+                                           @"Catering", @"Bake Shop",
+                                           @"Restaurant", @"Bakery",
+                                           @"Catering", @"Banquet Facility",
+                                           @"Restaurant", @"Bed and Breakfast",
+                                           @"Supermarket", @"Butcher Shop",
+                                           @"Catering", @"Cafeteria Public Access ",
+                                           @"Catering", @"Catering Vehicle",
+                                           @"Restaurant", @"Chartered Cruise Boats",
+                                           @"Catering", @"Church Banquet Facility",
+                                           @"Restaurant", @"Cocktail Bar / Beverage Room",
+                                           @"Restaurant", @"Commissary",
+                                           @"Catering", @"Community Kitchen Meal Program",
+                                           @"Supermarket", @"Fish Shop",
+                                           @"Catering", @"Food Bank",
+                                           @"Catering", @"Food Caterer",
+                                           @"Catering", @"Food Court Vendor",
+                                           @"Supermarket", @"Food Depot",
+                                           @"Factory", @"Food Processing Plant",
+                                           @"Supermarket", @"Food Store (Convenience / Variety)",
+                                           @"Catering", @"Food Take Out",
+                                           @"Catering", @"Food Vending Facility",
+                                           @"Selling Cart", @"Hot Dog Cart",
+                                           @"Restaurant", @"Ice Cream / Yogurt Vendors",
+                                           @"Factory", @"Meat Processing Plant",
+                                           @"Catering", @"Mobile Food Preparation Premises",
+                                           @"Restaurant", @"Private Club",
+                                           @"Selling Cart", @"Refreshment Stand",
+                                           @"Restaurant",@"Restaurant",
+                                           @"Catering", @"Secondary School Food Services",
+                                           @"Supermarket", @"Supermarket",
+                                           @"Restaurant", @"Toronto A La Cart", nil];
+
     self.currentParsedCharacterData = [NSMutableString string];
     
     NSXMLParser *parser = [[NSXMLParser alloc] initWithContentsOfURL:self.localDataUrl];
@@ -155,7 +167,7 @@ static NSString * const kAmountFined = @"AMOUNT_FINED";
         // and other parser errors.
         //
         didAbortParsing = YES;
-        [parser abortParsing];        
+        [parser abortParsing];
     }
     
     if ([elementName isEqualToString:kRowElementName])
@@ -165,14 +177,14 @@ static NSString * const kAmountFined = @"AMOUNT_FINED";
         //[self.currentInspectionReport setEstablishment_name:@"aaa"];
     }
     else if ([elementName isEqualToString:kRowID] ||
-               [elementName isEqualToString:kEstablishmentID] ||
-               [elementName isEqualToString:kEstablishmentName] ||
-               [elementName isEqualToString:kInspectionID] ||
-               [elementName isEqualToString:kEstablishmentType] ||
-               [elementName isEqualToString:kEstablishmentAddress] ||
-               [elementName isEqualToString:kEstablishmentStatus] ||
-               [elementName isEqualToString:kInspectionDate] ||
-               [elementName isEqualToString:kAmountFined])
+             [elementName isEqualToString:kEstablishmentID] ||
+             [elementName isEqualToString:kEstablishmentName] ||
+             [elementName isEqualToString:kInspectionID] ||
+             [elementName isEqualToString:kEstablishmentType] ||
+             [elementName isEqualToString:kEstablishmentAddress] ||
+             [elementName isEqualToString:kEstablishmentStatus] ||
+             [elementName isEqualToString:kInspectionDate] ||
+             [elementName isEqualToString:kAmountFined])
     {
         // For the other element begin accumulating parsed character data.
         // The contents are collected in parser:foundCharacters:.
@@ -188,9 +200,6 @@ static NSString * const kAmountFined = @"AMOUNT_FINED";
     
     if ([elementName isEqualToString:kRowElementName])
     {
-//        [self.currentInspectionReport setEstablishment_name:@"bbbb"];
-        
-        
         NSLog(@"Report: %@", self.currentInspectionReport);
         
         NSError *error = nil;
@@ -212,9 +221,7 @@ static NSString * const kAmountFined = @"AMOUNT_FINED";
     if ([elementName isEqualToString:kEstablishmentID])
     {
         int est_id = [self.currentParsedCharacterData intValue];
-        //NSNumber *estab_id = [NSNumber numberWithInt: est_id];
         self.currentInspectionReport.establishment_id = [NSNumber numberWithInt: est_id];
-        //NSLog(@"%i", [self.currentInspectionReport.establishment_id intValue]);
     }
     else
     if ( [elementName isEqualToString:kInspectionDate])
@@ -234,13 +241,14 @@ static NSString * const kAmountFined = @"AMOUNT_FINED";
     if ( [elementName isEqualToString:kEstablishmentType])
     {
         NSString *est_type = [self.currentParsedCharacterData copy];
-        self.currentInspectionReport.establishment_type = est_type;
+        NSString *newValue = [_dineSafeEstTypeValues valueForKey:est_type];
+        self.currentInspectionReport.establishment_type = newValue;
     }
     else
     if ( [elementName isEqualToString:kEstablishmentAddress])
     {
         NSString *est_add = [self.currentParsedCharacterData copy];
-            self.currentInspectionReport.establishment_address = est_add;
+        self.currentInspectionReport.establishment_address = est_add;
     }
     else
     if ( [elementName isEqualToString:kEstablishmentStatus])

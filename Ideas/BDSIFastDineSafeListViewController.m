@@ -1,19 +1,19 @@
 //
-//  BDSIRestaurantListViewController.m
+//  BDSIFastDineSafeListViewController.m
 //  Ideas
 //
 //  Created by tabinda siddiqi on 2012-09-12.
 //  Copyright (c) 2012 BroadstreetMobile. All rights reserved.
 //
 
-#import "BDSIRestaurantListViewController.h"
+#import "BDSIFastDineSafeListViewController.h"
 
 
-@interface BDSIRestaurantListViewController ()
+@interface BDSIFastDineSafeListViewController ()
 
 @end
 
-@implementation BDSIRestaurantListViewController
+@implementation BDSIFastDineSafeListViewController
 @synthesize fetchedResultsController = _fetchedResultsController;
 
 - (id)initWithStyle:(UITableViewStyle)style
@@ -37,7 +37,7 @@
 {
     [super viewWillAppear:animated];
     [self.navigationController setNavigationBarHidden:NO];
-    [self.navigationItem setTitle:@"Dine Safely"];
+    [self.navigationItem setTitle:@"Fast"];
 }
 
 - (void)didReceiveMemoryWarning
@@ -156,6 +156,7 @@
 {
     NSMutableDictionary *info = (NSMutableDictionary *)[_fetchedResultsController objectAtIndexPath:indexPath];
     cell.textLabel.text = [info valueForKey:@"establishment_name"];
+    NSLog(@"Show sizing of textLabel cell: x %1.1f y %1.1f", cell.textLabel.frame.origin.x, cell.textLabel.frame.origin.y);
     cell.detailTextLabel.text = [NSString stringWithFormat:@"%@", [info valueForKey:@"inspection_status"]];
     NSString *imageName = [[info valueForKey:@"establishment_type"] stringByAppendingPathExtension:@"png"];
     

@@ -583,47 +583,6 @@
         <image name="B-icon.png" width="30" height="30"/>
         <image name="city-toronto-logo.png" width="150" height="100"/>
     </resources>
-    <classes>
-        <class className="BDSIDetailViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/BDSIDetailViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="detailDescriptionLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="BDSIDineSafeDetailViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/BDSIDineSafeDetailViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="addressLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="dineSafeDetailOuterShell" candidateClass="UIView"/>
-                <relationship kind="outlet" name="inspectionDateLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="inspectionStatusLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="inspectionTorontoLogo" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="torontoPublicHealthLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="BDSIMasterViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/BDSIMasterViewController.h"/>
-        </class>
-        <class className="BDSIPassbookViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/BDSIPassbookViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="mapView" candidateClass="MKMapView"/>
-                <relationship kind="outlet" name="webView" candidateClass="UIWebView"/>
-            </relationships>
-        </class>
-        <class className="BDSIRestaurantListViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/BDSIRestaurantListViewController.h"/>
-        </class>
-        <class className="BDSISlowDineSafeListViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/BDSISlowDineSafeListViewController.h"/>
-        </class>
-        <class className="BDSISolutionsViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/BDSISolutionsViewController.h"/>
-        </class>
-        <class className="BDSIWhitePaperViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/BDSIWhitePaperViewController.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

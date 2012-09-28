@@ -13,7 +13,7 @@
 @end
 
 @implementation BDSIPassbookViewController
-@synthesize webView = _webView;
+@synthesize buttonNextStep = _buttonNextStep;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -30,42 +30,43 @@
 	// Do any additional setup after loading the view.
     [self.navigationItem setTitle:@"Using Passbook"];
     [self.navigationController setNavigationBarHidden:NO];
-    
-    [self loadFromWeb];
+//    [self.buttonNextStep setEnabled:NO];
 }
 
-- (void)loadFromWeb
+- (void)viewWillAppear:(BOOL)animated
 {
-    
-//    NSURL *localUrl = [NSURL URLWithString:@"http://pkpasses/subs/"];
-//    [[UIApplication sharedApplication] openURL:localUrl];
-
-    NSURL *localUrl = [NSURL URLWithString:@"http://bdsi.darrenbaptiste.com/pass/"];
-    NSURLRequest *samplePassLocalUrl = [NSURLRequest requestWithURL:localUrl];
-    [self.webView setDelegate:self];
-    [self.webView loadRequest:samplePassLocalUrl];    
+    self.navigationItem.title = @"Coupon signup";
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-    _webView = nil;
 }
 
-#pragma mark - UIWebViewDelegate methods
-- (void)webViewDidFinishLoad:(UIWebView *)webView
+- (void)viewDidUnload {
+    [self setButtonNextStep:nil];
+    [super viewDidUnload];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     
 }
 
-- (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error
+#pragma mark - User Action methods
+- (IBAction)emailEntry:(UITextField *)sender
 {
-    NSLog(@"Error loading web view: %@", error);
+    // if a (proper) email address was entered, enable the button to
+    // proceed to the next step
+    if ( [sender.text length] > 0 )
+    {
+        [self.buttonNextStep setEnabled:YES];
+    }
 }
 
-- (void)viewDidUnload {
-    [self setMapView:nil];
-    [super viewDidUnload];
+- (IBAction)buttonNextStepPushed:(UIButton *)sender
+{
 }
+
 @end

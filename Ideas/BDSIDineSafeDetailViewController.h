@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "RestaurantSafetyInfo.h"
 #import "InspectionReport.h"
-#import "BDSIRestaurantListViewController.h"
+#import "BDSIFastDineSafeListViewController.h"
 #import "BDSISlowDineSafeListViewController.h"
 #import <CoreData/CoreData.h>
 

@@ -37,7 +37,7 @@
 {
     [super viewWillAppear:animated];
     [self.navigationController setNavigationBarHidden:NO];
-    [self.navigationItem setTitle:@"Dine Safely"];
+    [self.navigationItem setTitle:@"Slow"];
 }
 
 - (void)didReceiveMemoryWarning
