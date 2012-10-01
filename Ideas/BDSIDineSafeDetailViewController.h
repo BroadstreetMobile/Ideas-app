@@ -21,6 +21,7 @@
 @property (strong, nonatomic) IBOutlet UILabel *inspectionStatusLabel;
 @property (strong, nonatomic) IBOutlet UILabel *addressLabel;
 @property (strong, nonatomic) IBOutlet UILabel *inspectionDateLabel;
+@property (strong, nonatomic) IBOutlet UILabel *establishmentTypeLabel;
 @property (strong, nonatomic) IBOutlet UIImageView *inspectionTorontoLogo;
 
 @end

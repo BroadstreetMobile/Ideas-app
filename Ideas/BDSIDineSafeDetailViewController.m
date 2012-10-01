@@ -20,6 +20,7 @@
 @synthesize inspectionStatusLabel = _inspectionStatusLabel;
 @synthesize addressLabel= _addressLabel;
 @synthesize inspectionDateLabel = _inspectionDateLabel;
+@synthesize establishmentTypeLabel = _establishmentTypeLabel;
 @synthesize inspectionTorontoLogo = _inspectionTorontoLogo;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -71,8 +72,10 @@
     [self.inspectionStatusLabel setText: self.inspectionReport.inspection_status];
     
     [self.addressLabel setText: self.inspectionReport.establishment_address];
-    //[self.addressLabel setBackgroundColor:[UIColor redColor]];
     [self.addressLabel setTextColor: [UIColor whiteColor]];
+    
+    [self.establishmentTypeLabel setText: self.inspectionReport.establishment_type];
+    [self.establishmentTypeLabel setTextColor: [UIColor whiteColor]];
     
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     [formatter setDateFormat:@"yyyy-MM-dd"];
@@ -95,6 +98,7 @@
     [self setTorontoPublicHealthLabel:nil];
     [self setDineSafeDetailOuterShell:nil];
     [self setInspectionStatusLabel:nil];
+    [self setEstablishmentTypeLabel:nil];
     [super viewDidUnload];
 }
 @end

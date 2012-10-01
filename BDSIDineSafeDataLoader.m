@@ -101,6 +101,7 @@ BOOL accumulatingParsedCharacterData = NO;
                                            @"Catering", @"Mobile Food Preparation Premises",
                                            @"Restaurant", @"Private Club",
                                            @"Selling Cart", @"Refreshment Stand",
+                                           @"Selling Cart", @"Refreshment Stand (Stationary)",
                                            @"Restaurant",@"Restaurant",
                                            @"Catering", @"Secondary School Food Services",
                                            @"Supermarket", @"Supermarket",
@@ -241,7 +242,7 @@ static NSString * const kAmountFined = @"AMOUNT_FINED";
     if ( [elementName isEqualToString:kEstablishmentType])
     {
         NSString *est_type = [self.currentParsedCharacterData copy];
-        NSString *newValue = [_dineSafeEstTypeValues valueForKey:est_type];
+        NSString *newValue = [_dineSafeEstTypeValues valueForKey:[est_type stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]]];
         self.currentInspectionReport.establishment_type = newValue;
     }
     else
