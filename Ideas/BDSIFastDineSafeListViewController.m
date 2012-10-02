@@ -154,13 +154,24 @@
 
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath
 {
+    //Retrive objects in a dictionary
     NSMutableDictionary *info = (NSMutableDictionary *)[_fetchedResultsController objectAtIndexPath:indexPath];
-    cell.textLabel.text = [info valueForKey:@"establishment_name"];
-    NSLog(@"Show sizing of textLabel cell: x %1.1f y %1.1f", cell.textLabel.frame.origin.x, cell.textLabel.frame.origin.y);
-    cell.detailTextLabel.text = [NSString stringWithFormat:@"%@", [info valueForKey:@"inspection_status"]];
-    NSString *imageName = [[info valueForKey:@"establishment_type"] stringByAppendingPathExtension:@"png"];
     
+    //edit all the text labels in the cell
+    cell.textLabel.text = [info valueForKey:@"establishment_name"];
+    //NSLog(@"Show sizing of textLabel cell: x %1.1f y %1.1f %1.1f width %1.1f height", cell.textLabel.frame.origin.x, cell.textLabel.frame.origin.y, cell.textLabel.frame.size.width, cell.textLabel.frame.size.width);
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"%@", [info valueForKey:@"inspection_status"]];
+    //NSLog(@"Show sizing of detailTextLabel cell: x %1.1f y %1.1f %1.1f width %1.1f height", cell.detailTextLabel.frame.origin.x, cell.detailTextLabel.frame.origin.y, cell.detailTextLabel.frame.size.width, cell.detailTextLabel.frame.size.height);
+    
+    //display images in the cell
+    NSString *imageName = [[info valueForKey:@"establishment_type"] stringByAppendingPathExtension:@"png"];
     cell.imageView.image = [UIImage imageNamed:imageName];
+    //NSLog(@"Show sizing of imageView cell: x %1.1f y %1.1f %1.1f width %1.1f height", cell.imageView.frame.origin.x, cell.imageView.frame.origin.y, cell.imageView.frame.size.width, cell.imageView.frame.size.height);
+    
+    //NSLog(@"Show sizing of cell: x %1.1f y %1.1f %1.1f width %1.1f height", cell.contentView.frame.origin.x, cell.contentView.frame.origin.y, cell.contentView.frame.size.width, cell.contentView.frame.size.height);
+    //NSLog(@"Show font of cell: %@ %@ %@", cell.textLabel.font, cell.backgroundColor, cell.detailTextLabel.font);
+    
+    
 }
 
 @end

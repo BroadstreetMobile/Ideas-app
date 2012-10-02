@@ -187,30 +187,34 @@
     
     //Give cells a background color
     cell.contentView.backgroundColor = [UIColor whiteColor];
-
     
     //Create a label as a subview in the cell to display the dine safe title
-    UILabel *dineSafeTitle = [[UILabel alloc] initWithFrame:CGRectMake(40, 15, 250, 15)];
+    UILabel *dineSafeTitle = [[UILabel alloc] initWithFrame:CGRectMake(40, 8, 250, 15)];
+    //UILabel *dineSafeTitle = [[UILabel alloc] initWithFrame:CGRectMake(10, 2, 38, 38)];
     dineSafeTitle.text = [info valueForKey:@"establishment_name"];
-    [dineSafeTitle setFont:[UIFont fontWithName:@"American Typewriter" size:16]];
+    [dineSafeTitle setFont:[UIFont fontWithName:@"Helvetica-Bold" size:18]];
+    [dineSafeTitle setTextColor:[UIColor blackColor]];
     [dineSafeTitle setLineBreakMode:NSLineBreakByTruncatingTail];
-    dineSafeTitle.backgroundColor = [UIColor clearColor];
+    dineSafeTitle.backgroundColor = [UIColor whiteColor];
     dineSafeTitle.alpha = 0.5;
     
     //Create a label as a subview in the cell to display the dine safe status
-    UILabel *dineSafeInspectionStatus = [[UILabel alloc] initWithFrame:CGRectMake(40, 30, 100, 15)];
+    UILabel *dineSafeInspectionStatus = [[UILabel alloc] initWithFrame:CGRectMake(40, 28, 150, 15)];
+    //UILabel *dineSafeInspectionStatus = [[UILabel alloc] initWithFrame:CGRectMake(10, 24, 47, 18)];
     dineSafeInspectionStatus.text = [info valueForKey:@"inspection_status"];
-    [dineSafeInspectionStatus setFont:[UIFont fontWithName:@"American Typewriter" size:12]];
-    dineSafeInspectionStatus.backgroundColor = [UIColor clearColor];
+    [dineSafeInspectionStatus setFont:[UIFont fontWithName:@"Helvetica" size:14]];
+    dineSafeInspectionStatus.backgroundColor = [UIColor whiteColor];
     dineSafeInspectionStatus.alpha = 0.5;
     
     //Create a label as a subview in the cell to display the dine safe number of type
-    UILabel *dineSafeNumOfType = [[UILabel alloc] initWithFrame:CGRectMake(150, 30, 100, 15)];
-    [dineSafeNumOfType setFont:[UIFont fontWithName:@"American Typewriter" size:12]];
+    UILabel *dineSafeNumOfType = [[UILabel alloc] initWithFrame:CGRectMake(150, 28, 200, 15)];
+    [dineSafeNumOfType setFont:[UIFont fontWithName:@"Helvetica" size:14]];
     dineSafeNumOfType.backgroundColor = [UIColor clearColor];
     dineSafeNumOfType.alpha = 0.5;
     NSNumber *numOfDineSafeType = [self findEstTypeCount:[info valueForKey:@"establishment_type"]];
-    dineSafeNumOfType.text = [numOfDineSafeType stringValue];
+    NSString *dineSafeNumOfTypeText  = [NSString stringWithFormat:@"/ %@ Count: %@", [info valueForKey:@"establishment_type"], [numOfDineSafeType stringValue]];
+    //NSLog(@"%@", dineSafeNumOfTypeText);
+    dineSafeNumOfType.text = dineSafeNumOfTypeText;
     
     [cell.contentView addSubview:dineSafeTitle];
     [cell.contentView addSubview:dineSafeInspectionStatus];
