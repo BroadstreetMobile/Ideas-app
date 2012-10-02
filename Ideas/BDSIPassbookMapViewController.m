@@ -62,9 +62,9 @@
 {
     //TODO: send a POST rather than GET
     
-    NSString *server = @"http://bdsi.darrenbaptiste.com/pass/subs/index.php";
+    NSString *server = @"http://apps.darrenbaptiste.com/pass_server.php/create";
     // send all of the users' collected data to the server to build a pass
-    NSString *urlString = [NSString stringWithFormat:@"%@?lon=%@&lat=%@&email=%@", server, self.longitudeTextField.text, self.lattitudeTextField.text, @"bob@example.com"];
+    NSString *urlString = [NSString stringWithFormat:@"%@/%@/%@", server, self.longitudeTextField.text, self.lattitudeTextField.text];
     
     NSLog(@"URL: %@", urlString);
     
