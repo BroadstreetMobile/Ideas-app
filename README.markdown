@@ -12,7 +12,7 @@ Darren Baptiste - BroadStreet Mobile<br/>
 Tabinda Siddiqi - BroadStreet Mobile<br/>
 <a href="http://www.linkedin.com/pub/tabinda-siddiqi/43/2b1/358">Connect on LinkedIn</a><br/>
 
-
+Oct 3, 2012 - added /develop branch
 
 ## License
 Copyright (c) 2012 BroadStreet Mobile 
