@@ -45,7 +45,7 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-        [[[segue destinationViewController] navigationController] setNavigationBarHidden:NO];
+    [[[segue destinationViewController] navigationController] setNavigationBarHidden:NO];
 }
 
 @end

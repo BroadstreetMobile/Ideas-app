@@ -102,7 +102,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="Uco-Sw-Xsr" kind="push" id="s05-Pm-ncD"/>
+                                    <segue destination="Uco-Sw-Xsr" kind="push" identifier="showPassbook" id="s05-Pm-ncD"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -113,7 +113,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7tl-Tr-9Rl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="614" y="-1226"/>
+            <point key="canvasLocation" x="1518" y="-1226"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="W5U-ve-Ojo">
@@ -164,7 +164,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c3H-mV-WmX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1078" y="-1526"/>
+            <point key="canvasLocation" x="2030" y="-2598"/>
         </scene>
         <!--Slow Dine Safe List View Controller - Dine Safe List-->
         <scene sceneID="q9E-Ip-Jmx">
@@ -199,7 +199,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YnT-ls-nMc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1527" y="-1599"/>
+            <point key="canvasLocation" x="2479" y="-2671"/>
         </scene>
         <!--Fast Dine Safe List View Controller - RestaurantSafetyInfo-->
         <scene sceneID="jh5-yT-9KI">
@@ -250,7 +250,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Kg-6u-LBm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1543" y="-974"/>
+            <point key="canvasLocation" x="2495" y="-2046"/>
         </scene>
         <!--Dine Safe Detail View Controller - DineSafeDetailViewController-->
         <scene sceneID="Yvp-3i-oJ0">
@@ -324,7 +324,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F3N-NA-Pe1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2087" y="-1214"/>
+            <point key="canvasLocation" x="3039" y="-2286"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="PuX-c2-Zqg">
@@ -515,24 +515,59 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <webView contentMode="scaleToFill" id="kOe-zo-6zN">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="359"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                            </webView>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" id="TDi-Dy-7a5">
-                                <rect key="frame" x="40" y="219" width="240" height="128"/>
+                                <rect key="frame" x="0.0" y="59" width="320" height="308"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                             </mapView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="[Drag the pin to show where you normally spend lunch. Tap save when done.]" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="NM5-E0-jfN">
+                                <rect key="frame" x="20" y="6" width="280" height="49"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" hidesWhenStopped="YES" animating="YES" style="whiteLarge" id="Waq-BY-wF6">
+                                <rect key="frame" x="270" y="18" width="37" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="5Vh-Ro-vVl">
+                                <rect key="frame" x="35" y="317" width="256" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Show Current Location">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="currentLocationButtonPushed:" destination="Uco-Sw-Xsr" eventType="touchUpInside" id="dJU-yd-32j"/>
+                                </connections>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" id="GCY-9n-hA6"/>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="GCY-9n-hA6">
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="save" id="EmX-En-NZK">
+                            <connections>
+                                <action selector="buttonNextStepPushed:" destination="Uco-Sw-Xsr" id="XKp-Ju-KBc"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="activityIndicator" destination="Waq-BY-wF6" id="92B-o1-Qn8"/>
+                        <outlet property="buttonNextStep" destination="EmX-En-NZK" id="Bpm-yU-WqV"/>
+                        <outlet property="currentLocationButton" destination="5Vh-Ro-vVl" id="Dgi-QJ-cN8"/>
+                        <outlet property="mapView" destination="TDi-Dy-7a5" id="iKz-HN-6KM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kNu-F4-kWd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1078" y="-575"/>
+            <point key="canvasLocation" x="2030" y="-1219"/>
         </scene>
         <!--Detail View Controller - Detail-->
         <scene sceneID="24">
@@ -615,9 +650,11 @@
         <class className="BDSIPassbookViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/BDSIPassbookViewController.h"/>
             <relationships>
-                <relationship kind="action" name="buttonNextStepPushed:" candidateClass="UIButton"/>
-                <relationship kind="action" name="emailEntry:" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="buttonNextStep" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="activityIndicator" candidateClass="UIActivityIndicatorView"/>
+                <relationship kind="outlet" name="buttonNextStep" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="currentLocationButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="currentLocationLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="mapView" candidateClass="MKMapView"/>
             </relationships>
         </class>
         <class className="BDSISlowDineSafeListViewController" superclassName="UITableViewController">
