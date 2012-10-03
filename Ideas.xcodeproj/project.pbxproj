@@ -41,8 +41,9 @@
 		958D17821602493A00FAD2F8 /* InspectionReport.m in Sources */ = {isa = PBXBuildFile; fileRef = 958D17811602493A00FAD2F8 /* InspectionReport.m */; };
 		958D178416024D9200FAD2F8 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 958D178316024D9200FAD2F8 /* Default-568h@2x.png */; };
 		95CE95791612C70500631223 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95CE95781612C70500631223 /* MapKit.framework */; };
-		95CE9581161355A900631223 /* BDSIPassbookMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95CE9580161355A900631223 /* BDSIPassbookMapViewController.m */; };
 		95CE9583161358C500631223 /* strip.png in Resources */ = {isa = PBXBuildFile; fileRef = 95CE9582161358C500631223 /* strip.png */; };
+		95DE3A7A161B48AF0092CFEC /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95DE3A79161B48AF0092CFEC /* CoreLocation.framework */; };
+		95DE3A88161B7E790092CFEC /* BDSIMapPin.m in Sources */ = {isa = PBXBuildFile; fileRef = 95DE3A87161B7E790092CFEC /* BDSIMapPin.m */; };
 		95EA8E341600CF43009FF5A5 /* Ideas.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 95EA8E321600CF43009FF5A5 /* Ideas.xcdatamodeld */; };
 		95EA8E371600D017009FF5A5 /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = 95EA8E361600D017009FF5A5 /* Event.m */; };
 		95EA8E3A1600D017009FF5A5 /* WhitePaper.m in Sources */ = {isa = PBXBuildFile; fileRef = 95EA8E391600D017009FF5A5 /* WhitePaper.m */; };
@@ -103,9 +104,10 @@
 		958D17811602493A00FAD2F8 /* InspectionReport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InspectionReport.m; sourceTree = "<group>"; };
 		958D178316024D9200FAD2F8 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		95CE95781612C70500631223 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
-		95CE957F161355A900631223 /* BDSIPassbookMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDSIPassbookMapViewController.h; sourceTree = "<group>"; };
-		95CE9580161355A900631223 /* BDSIPassbookMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDSIPassbookMapViewController.m; sourceTree = "<group>"; };
 		95CE9582161358C500631223 /* strip.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = strip.png; sourceTree = "<group>"; };
+		95DE3A79161B48AF0092CFEC /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		95DE3A86161B7E790092CFEC /* BDSIMapPin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDSIMapPin.h; sourceTree = "<group>"; };
+		95DE3A87161B7E790092CFEC /* BDSIMapPin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDSIMapPin.m; sourceTree = "<group>"; };
 		95EA8E331600CF43009FF5A5 /* Ideas.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Ideas.xcdatamodel; sourceTree = "<group>"; };
 		95EA8E351600D017009FF5A5 /* Event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Event.h; sourceTree = "<group>"; };
 		95EA8E361600D017009FF5A5 /* Event.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Event.m; sourceTree = "<group>"; };
@@ -127,6 +129,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95DE3A7A161B48AF0092CFEC /* CoreLocation.framework in Frameworks */,
 				95CE95791612C70500631223 /* MapKit.framework in Frameworks */,
 				951070A215F69D9B00E8E336 /* UIKit.framework in Frameworks */,
 				951070A415F69D9B00E8E336 /* Foundation.framework in Frameworks */,
@@ -166,6 +169,7 @@
 				951070A315F69D9B00E8E336 /* Foundation.framework */,
 				951070A515F69D9B00E8E336 /* CoreGraphics.framework */,
 				95CE95781612C70500631223 /* MapKit.framework */,
+				95DE3A79161B48AF0092CFEC /* CoreLocation.framework */,
 				951070A715F69D9B00E8E336 /* CoreData.framework */,
 			);
 			name = Frameworks;
@@ -269,8 +273,8 @@
 			children = (
 				95EA8E431600E168009FF5A5 /* BDSIPassbookViewController.h */,
 				95EA8E441600E168009FF5A5 /* BDSIPassbookViewController.m */,
-				95CE957F161355A900631223 /* BDSIPassbookMapViewController.h */,
-				95CE9580161355A900631223 /* BDSIPassbookMapViewController.m */,
+				95DE3A86161B7E790092CFEC /* BDSIMapPin.h */,
+				95DE3A87161B7E790092CFEC /* BDSIMapPin.m */,
 			);
 			name = Passbook;
 			sourceTree = "<group>";
@@ -412,8 +416,8 @@
 				958D17821602493A00FAD2F8 /* InspectionReport.m in Sources */,
 				94AE071A160A231D00E1D16E /* BDSIDineSafeDetailViewController.m in Sources */,
 				94AE0727160CF3DB00E1D16E /* BDSISlowDineSafeListViewController.m in Sources */,
-				95CE9581161355A900631223 /* BDSIPassbookMapViewController.m in Sources */,
 				950C55591615499800B53A18 /* BDSIScrollingTablesSelectionViewController.m in Sources */,
+				95DE3A88161B7E790092CFEC /* BDSIMapPin.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
