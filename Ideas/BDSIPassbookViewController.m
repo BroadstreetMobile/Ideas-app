@@ -8,11 +8,15 @@
 
 #import "BDSIPassbookViewController.h"
 #import "BDSIMapPin.h"
+#import <AddressBookUI/AddressBookUI.h>
+#import <AddressBook/AddressBook.h>
 
 @interface BDSIPassbookViewController ()
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 @property (nonatomic, strong) CLLocationManager *locationManager;
 @property (readonly) CLLocationCoordinate2D currentUserCoordinate;
+//@property (nonatomic, strong) CLGeocoder *geocoder;
+@property (nonatomic) NSArray *nearbyLocations;
 
 @end
 
@@ -23,6 +27,8 @@
 @synthesize activityIndicator = _activityIndicator;
 @synthesize locationManager = _locationManager;
 @synthesize currentUserCoordinate = _currentUserCoordinate;
+//@synthesize geocoder = _geocoder;
+@synthesize nearbyLocations = _nearbyLocations;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -41,6 +47,9 @@
     [self.navigationController setNavigationBarHidden:NO];
     [self.buttonNextStep setEnabled:NO];
     _currentUserCoordinate = kCLLocationCoordinate2DInvalid;
+    
+//    self.geocoder = [[CLGeocoder alloc] init];
+
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -53,6 +62,7 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
     _locationManager = nil;
+//    _geocoder = nil;
 }
 
 - (void)viewDidUnload {
@@ -101,7 +111,7 @@
     [self startUpdatingCurrentLocation];
 }
 */
-- (void)requestPass
+- (void)requestPass_ORIGINAL
 {
     NSString *server = @"https://apps.darrenbaptiste.com/pass/pass_server.php/create";
     // send all of the users' collected data to the server to build a pass
@@ -117,7 +127,40 @@
     
 }
 
-#pragma mark - CoreLocation Delegate methods
+// now try it by opening an NSURLConnection and passing it JSON-encoded arrays of nearby coordinates and addresses
+- (void)requestPass
+{
+    NSString *server = @"https://apps.darrenbaptiste.com/pass/pass_server.php/create";
+    // send all of the users' collected data to the server to build a pass
+    NSString *urlString = [NSString stringWithFormat:@"%@/%g/%g", server, _currentUserCoordinate.latitude, _currentUserCoordinate.longitude];
+    
+    NSLog(@"URL: %@", urlString);
+    
+    NSURL *url = [NSURL URLWithString:urlString];
+    
+//    NSArray *array = [NSArray arrayWithObjects:@"", nil];
+    NSString *postString = @"";
+    
+    NSData *bodyData = [postString dataUsingEncoding:NSUTF8StringEncoding];
+    
+    NSMutableURLRequest *urlRequest = [NSMutableURLRequest requestWithURL:url];
+    [urlRequest setHTTPMethod:@"POST"];
+    [urlRequest setHTTPBody:bodyData];
+    
+    NSURLConnection *urlConnection = [NSURLConnection connectionWithRequest:urlRequest delegate:self];
+    [urlConnection start];
+    
+    if ( ![[UIApplication sharedApplication] openURL:url] )
+    {
+        NSLog(@"Couldn't launch URL: %@", url);
+    }
+    
+}
+
+#pragma mark - NSURLConnectionDelegate
+
+
+#pragma mark - CoreLocation methods
 - (void)startUpdatingCurrentLocation
 {
     // if location services are restricted do nothing
@@ -160,6 +203,7 @@
     
     // show/move a pin to show this location
     [self displayLocation:location onMap:self.mapView];
+//    [self.mapView setShowsUserLocation:YES];  // not used, as the user may want to manually move the pointer to their preferred lunctime location
     
     [self.buttonNextStep setEnabled:YES];
 }
@@ -177,10 +221,87 @@
                             return;
                         }
                         NSLog(@"Received placemarks: %@", placemarks);
-                        [self displayPlacemarks:placemarks];
-                    }];
+                        [self displayPlacemarks:placemarks usingImage:nil];
+                        
+                        // wait a moment before launching a new query
+                        int64_t delayInSeconds = 2.0;
+                        dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
+                        dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+                            [self displayPlacemarksForBusinessName:@"McDonald's" nearLocation:location];
+                        });
+                    }
+     ];
 }
 
+// center this search around the users' current location
+- (void)displayPlacemarksForBusinessName:(NSString *)businessName nearLocation:(CLLocation *)location
+{
+    CLGeocoder *geocoderSearch = [[CLGeocoder alloc] init];
+
+    // find the region for the location specified by the user
+//    CLRegion *region = [[CLRegion alloc] initCircularRegionWithCenter:location.coordinate radius:500 identifier:@"Businesses"];
+    
+    
+//    CFErrorRef *error;
+    ABRecordRef aBusiness = ABPersonCreate();
+    CFErrorRef error = NULL;
+    ABRecordSetValue(aBusiness, kABPersonOrganizationProperty, (__bridge CFTypeRef)(businessName), &error);
+    ABRecordSetValue(aBusiness, kABPersonKindProperty, kABPersonKindOrganization, &error);
+
+    if (error != NULL)
+    {
+        NSLog(@"error during creation of record");
+        error = NULL;
+    }
+
+    ABAddressBookRef addressBook = ABAddressBookCreateWithOptions(NULL, &error);
+
+    BDSIPassbookViewController * __weak weakSelf = self;  // avoid capturing self in the block
+    ABAddressBookRequestAccessWithCompletion(addressBook, ^(bool granted, CFErrorRef anError)
+         {
+            if (granted)
+            {
+                BOOL isAdded = ABAddressBookAddRecord (addressBook, aBusiness, &anError);
+                
+                if(isAdded)
+                {
+                    ABAddressBookSave(addressBook, &anError);
+                    
+//                    NSDictionary *addressDict = [NSDictionary dictionaryWithDictionary:(__bridge NSDictionary *)(ABRecordCopyValue(addressBook, kABMultiDictionaryPropertyType))];
+//                    NSDictionary *addressDict = (__bridge NSDictionary *)aBusiness;
+//                    NSString *streetName = @"Toronto Street";
+//                    NSDictionary *addressDict = [NSDictionary dictionaryWithObject:businessName forKey:@"company"];
+                    
+                    [geocoderSearch geocodeAddressString:@"1 Yonge Street" completionHandler:^(NSArray *placemarks, NSError *error)
+//                    [geocoderSearch geocodeAddressDictionary:addressDict completionHandler:^(NSArray *placemarks, NSError *error)
+                         {
+                             if (error)
+                             {
+//                                 NSLog(@"Geocode for businesses on %@ ", streetName);
+                                 NSLog(@"Geocode for businesses named [ %@ ] failed with error: %@", businessName, error);
+                                 [weakSelf displayError:error];
+                                 return;
+                             }
+                             
+                             // store these placemarks for sending to the pass_server later
+                             //DARREN
+                             
+                             NSLog(@"While looking for [ %@ ], we received these placemarks: %@", businessName, placemarks);
+                             [weakSelf displayPlacemarks:placemarks usingImage:[UIImage imageNamed:@"pushpin.png"]];
+                             
+                             
+                         }
+                     ];
+                    
+                    
+                }
+                
+//                [weakSelf.mapView set]
+            }
+         });
+}
+
+#pragma mark - CoreLocation Delegate methods
 - (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
 {
     // if the location is older than 30s ignore
@@ -190,7 +311,7 @@
     }
     
     // after recieving a location, stop updating
-    [self stopUpdatingCurrentLocation];
+    //[self stopUpdatingCurrentLocation];
     
     [self showCurrentLocation:newLocation];
 }
@@ -200,7 +321,7 @@
     NSLog(@"%@", error);
     
     // stop updating
-    [self stopUpdatingCurrentLocation];
+    //[self stopUpdatingCurrentLocation];
     
     // since we got an error, set selected location to invalid location
     _currentUserCoordinate = kCLLocationCoordinate2DInvalid;
@@ -213,17 +334,43 @@
     [alert show];
 }
 
+#pragma mark - MapViewDelegateMethods
+- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id < MKAnnotation >)annotation
+{
+    NSString *reuseID = @"anno";
+    
+    MKAnnotationView *annotationView = [mapView dequeueReusableAnnotationViewWithIdentifier:reuseID];
+    if (annotationView == nil)
+    {
+        annotationView = [[MKAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:reuseID];
+        [annotationView setImage:[UIImage imageNamed:@"pushpin"]];
+    }
+    
+    return annotationView;
+}
+
 #pragma mark - Utility methods
 // plot one or more placemarks onto the map
-- (void)displayPlacemarks:(NSArray *)placemarks
+- (void)displayPlacemarks:(NSArray *)placemarks usingImage:(UIImage *)image
 {
     for (CLPlacemark *placemark in placemarks)
     {
         // create an MKAnnotation, then MKAnnotationView, then add to the map
         BDSIMapPin *mapPin = [[BDSIMapPin alloc] init];
         [mapPin setPlacemark:placemark];
-        [self.mapView addAnnotation:mapPin];
+        
+        MKAnnotationView *annotationView = [[MKAnnotationView alloc] initWithAnnotation:mapPin reuseIdentifier:nil];
+
+        // if an image was sent, create an AnnotationView that uses it
+        if (image)
+        {
+            [annotationView setImage:image];
+        }
+        
+        [self.mapView addAnnotation:annotationView.annotation];
     }
+    
+    [self.activityIndicator stopAnimating];
 }
 
 // display a given NSError in an UIAlertView
@@ -234,11 +381,12 @@
         NSString *message;
         switch ([error code])
         {
-            case kCLErrorGeocodeFoundNoResult: message = @"kCLErrorGeocodeFoundNoResult";
+            case kCLErrorGeocodeFoundNoResult:
+                message = @"No results to display ~ kCLErrorGeocodeFoundNoResult";
                 break;
             case kCLErrorGeocodeCanceled: message = @"kCLErrorGeocodeCanceled";
                 break;
-            case kCLErrorGeocodeFoundPartialResult: message = @"kCLErrorGeocodeFoundNoResult";
+            case kCLErrorGeocodeFoundPartialResult: message = @"kCLErrorGeocodeFoundNoResult+Partial";
                 break;
             default: message = [error description];
                 break;
