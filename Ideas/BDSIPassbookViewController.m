@@ -55,6 +55,8 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [self.activityIndicator stopAnimating];
+    [self.mapView setShowsUserLocation:YES];
+    [self currentLocationButtonPushed:nil];
 }
 
 - (void)didReceiveMemoryWarning
@@ -100,7 +102,10 @@
 {
     self.currentLocationButton.enabled = NO;
     [self.activityIndicator startAnimating];
+    
     [self startUpdatingCurrentLocation];
+//    [self displayPlacemarksForBusinessName:@"McDonald's" nearLocation:nil];
+    [self.mapView setShowsUserLocation:YES];
 }
 
 /*
@@ -130,6 +135,16 @@
 // now try it by opening an NSURLConnection and passing it JSON-encoded arrays of nearby coordinates and addresses
 - (void)requestPass
 {
+    // if the user location is tracked on the map, then we can pass it forward,
+    // otherwise tell the user
+    if (!self.mapView.userLocationVisible)
+    {
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Warning"
+                                                            message:@"We haven't tracked your location, therefore the pass we create will not have any addresses attached to it."
+                                                           delegate:nil cancelButtonTitle:nil otherButtonTitles:@"Okay", nil];
+        [alertView show];
+    }
+    
     NSString *server = @"https://apps.darrenbaptiste.com/pass/pass_server.php/create";
     // send all of the users' collected data to the server to build a pass
     NSString *urlString = [NSString stringWithFormat:@"%@/%g/%g", server, _currentUserCoordinate.latitude, _currentUserCoordinate.longitude];
@@ -227,7 +242,7 @@
                         int64_t delayInSeconds = 2.0;
                         dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
                         dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
-                            [self displayPlacemarksForBusinessName:@"McDonald's" nearLocation:location];
+                            [self displayPlacemarksForBusinessName:@"Apple" nearLocation:location];
                         });
                     }
      ];
@@ -270,10 +285,46 @@
 //                    NSDictionary *addressDict = [NSDictionary dictionaryWithDictionary:(__bridge NSDictionary *)(ABRecordCopyValue(addressBook, kABMultiDictionaryPropertyType))];
 //                    NSDictionary *addressDict = (__bridge NSDictionary *)aBusiness;
 //                    NSString *streetName = @"Toronto Street";
-//                    NSDictionary *addressDict = [NSDictionary dictionaryWithObject:businessName forKey:@"company"];
+//                    NSDictionary *addressDict = [NSDictionary dictionaryWithObjectsAndKeys:@"Apple", @"name", @"Infinte Loop", @"thoroughfare", @"Cupertino", @"locality", nil];
+/*
+                    NSDictionary *addressDict = [NSDictionary dictionaryWithObjectsAndKeys:
+                                                       @"Toronto", @"City", 
+                                                       @"Canada", @"Country", 
+                                                       @"CA", @"CountryCode", 
+//                                                       FormattedAddressLines =     (
+//                                                                                    "301 Front St W",
+//                                                                                    "Toronto ON M5V 2T6",
+//                                                                                    Canada
+//                                                                                    );
+                                                       @"Ontario", @"State", 
+                                                       @"301 Front St W", @"Street", 
+                                                       @"Toronto", @"SubAdministrativeArea",
+//                                                       @"Entertainment District", @"SubLocality",
+                                                       @"301", @"SubThoroughfare",
+                                                       @"Front St W", @"Thoroughfare", 
+//                                                       @"M5V 2T6", @"ZIP",
+                                                       nil];
+*/
                     
-                    [geocoderSearch geocodeAddressString:@"1 Yonge Street" completionHandler:^(NSArray *placemarks, NSError *error)
-//                    [geocoderSearch geocodeAddressDictionary:addressDict completionHandler:^(NSArray *placemarks, NSError *error)
+                    NSDictionary *addressDict = [NSDictionary dictionaryWithObjectsAndKeys:
+//                                                 @"AreasOfInterest", @[@"National Park"],
+                                                 @"Apple", @"Name",
+//                                                 @"New York City", @"City",
+//                                                 @"Canada", @"Country",
+                                                 @"US", @"CountryCode",
+//                                                 @"Utah", @"State",
+//                                                 @"301 Front St W", @"Street",
+//                                                 @"Toronto", @"SubAdministrativeArea",
+                                                 //                                                       @"Entertainment District", @"SubLocality",
+//                                                 @"301", @"SubThoroughfare",
+//                                                 @"Front St W", @"Thoroughfare",
+                                                 //                                                       @"M5V 2T6", @"ZIP",
+                                                 nil];
+
+                    
+                    
+//                    [geocoderSearch geocodeAddressString:@"301 Front Street West  Toronto, ON M5V 2T6" completionHandler:^(NSArray *placemarks, NSError *error)
+                    [geocoderSearch geocodeAddressDictionary:addressDict completionHandler:^(NSArray *placemarks, NSError *error)
                          {
                              if (error)
                              {
@@ -349,12 +400,19 @@
     return annotationView;
 }
 
+- (void)mapViewDidFinishLoadingMap:(MKMapView *)mapView
+{
+    [self.buttonNextStep setEnabled:YES];
+}
+
 #pragma mark - Utility methods
 // plot one or more placemarks onto the map
 - (void)displayPlacemarks:(NSArray *)placemarks usingImage:(UIImage *)image
 {
     for (CLPlacemark *placemark in placemarks)
     {
+        NSLog(@"Placemark: %@", placemark.addressDictionary);
+
         // create an MKAnnotation, then MKAnnotationView, then add to the map
         BDSIMapPin *mapPin = [[BDSIMapPin alloc] init];
         [mapPin setPlacemark:placemark];
