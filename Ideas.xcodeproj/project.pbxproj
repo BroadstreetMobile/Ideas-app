@@ -40,6 +40,8 @@
 		957DC7C715FF803700C66E3F /* SampleData-Whitepapers.plist in Resources */ = {isa = PBXBuildFile; fileRef = 957DC7C615FF803700C66E3F /* SampleData-Whitepapers.plist */; };
 		958D17821602493A00FAD2F8 /* InspectionReport.m in Sources */ = {isa = PBXBuildFile; fileRef = 958D17811602493A00FAD2F8 /* InspectionReport.m */; };
 		958D178416024D9200FAD2F8 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 958D178316024D9200FAD2F8 /* Default-568h@2x.png */; };
+		95AF73871623C07400DB30BF /* PassbookSolution.html in Resources */ = {isa = PBXBuildFile; fileRef = 95AF73861623C07400DB30BF /* PassbookSolution.html */; };
+		95AF738A1623C45100DB30BF /* BDSIPassbookTutorialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95AF73891623C45100DB30BF /* BDSIPassbookTutorialViewController.m */; };
 		95CCD28F161E83570094D505 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95CCD28E161E83570094D505 /* AddressBook.framework */; };
 		95CE95791612C70500631223 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95CE95781612C70500631223 /* MapKit.framework */; };
 		95CE9583161358C500631223 /* strip.png in Resources */ = {isa = PBXBuildFile; fileRef = 95CE9582161358C500631223 /* strip.png */; };
@@ -106,6 +108,9 @@
 		958D17801602493A00FAD2F8 /* InspectionReport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InspectionReport.h; sourceTree = "<group>"; };
 		958D17811602493A00FAD2F8 /* InspectionReport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InspectionReport.m; sourceTree = "<group>"; };
 		958D178316024D9200FAD2F8 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		95AF73861623C07400DB30BF /* PassbookSolution.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = PassbookSolution.html; sourceTree = "<group>"; };
+		95AF73881623C45100DB30BF /* BDSIPassbookTutorialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDSIPassbookTutorialViewController.h; sourceTree = "<group>"; };
+		95AF73891623C45100DB30BF /* BDSIPassbookTutorialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDSIPassbookTutorialViewController.m; sourceTree = "<group>"; };
 		95CCD28E161E83570094D505 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
 		95CE95781612C70500631223 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		95CE9582161358C500631223 /* strip.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = strip.png; sourceTree = "<group>"; };
@@ -286,6 +291,9 @@
 				95EA8E441600E168009FF5A5 /* BDSIPassbookViewController.m */,
 				95DE3A86161B7E790092CFEC /* BDSIMapPin.h */,
 				95DE3A87161B7E790092CFEC /* BDSIMapPin.m */,
+				95AF73861623C07400DB30BF /* PassbookSolution.html */,
+				95AF73881623C45100DB30BF /* BDSIPassbookTutorialViewController.h */,
+				95AF73891623C45100DB30BF /* BDSIPassbookTutorialViewController.m */,
 			);
 			name = Passbook;
 			sourceTree = "<group>";
@@ -403,6 +411,7 @@
 				94AE0724160B98F300E1D16E /* city-toronto-logo.png in Resources */,
 				95CE9583161358C500631223 /* strip.png in Resources */,
 				95DE3B44161D59310092CFEC /* pushpin.png in Resources */,
+				95AF73871623C07400DB30BF /* PassbookSolution.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -430,6 +439,7 @@
 				94AE0727160CF3DB00E1D16E /* BDSISlowDineSafeListViewController.m in Sources */,
 				950C55591615499800B53A18 /* BDSIScrollingTablesSelectionViewController.m in Sources */,
 				95DE3A88161B7E790092CFEC /* BDSIMapPin.m in Sources */,
+				95AF738A1623C45100DB30BF /* BDSIPassbookTutorialViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
