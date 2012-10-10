@@ -51,7 +51,6 @@
 {
     [self.activityIndicator stopAnimating];
     [self.mapView setShowsUserLocation:YES];
-//    [self currentLocationButtonPushed:nil];
 }
 
 - (void)didReceiveMemoryWarning
@@ -98,7 +97,7 @@
     
     NSString *server = @"https://apps.darrenbaptiste.com/pass/pass_server.php/create";
     // send all of the users' collected data to the server to build a pass
-    NSString *urlString = [NSString stringWithFormat:@"%@/%g/%g/%@", server, _currentUserCoordinate.latitude, _currentUserCoordinate.longitude, self.localAddress];
+    NSString *urlString = [NSString stringWithFormat:@"%@/%g/%g/%@", server, _currentUserCoordinate.longitude, _currentUserCoordinate.latitude, self.localAddress];
     
     NSLog(@"URL: %@", urlString);
     
@@ -110,9 +109,6 @@
     }
     
 }
-
-#pragma mark - NSURLConnectionDelegate
-
 
 #pragma mark - CoreLocation methods
 - (void)reverseGeodocdeCurrentLocation:(CLLocation *)location
@@ -135,84 +131,10 @@
          
          NSLog(@"The address is: %@", self.localAddress);
 
-         // TODO: use KVO to set this after self.lcalAddress is updated
-         self.mapView.region = MKCoordinateRegionMakeWithDistance(_currentUserCoordinate, 10000, 10000);
+         self.mapView.region = MKCoordinateRegionMakeWithDistance(_currentUserCoordinate, 3500, 3500);
 
      }];
 }
-/*
-- (void)startUpdatingCurrentLocation
-{
-    // if location services are restricted do nothing
-    if ([CLLocationManager authorizationStatus] == kCLAuthorizationStatusDenied ||
-        [CLLocationManager authorizationStatus] == kCLAuthorizationStatusRestricted )
-    {
-        return;
-    }
-    
-    // if locationManager does not currently exist, create it
-    if (!_locationManager)
-    {
-        _locationManager = [[CLLocationManager alloc] init];
-        [_locationManager setDelegate:self];
-        _locationManager.distanceFilter = 10.0f; // we don't need to be any more accurate than 10m
-        _locationManager.purpose = @"This may be used to obtain your reverse geocoded address";
-    }
-    
-//    [_locationManager startMonitoringSignificantLocationChanges];   // for apps that need fairly static location info
-    [_locationManager startUpdatingLocation];   // fetch constant location updates, mostly for navigation apps, but useful for our demo
-    
-    [self.activityIndicator startAnimating];
-}
-
-- (void)stopUpdatingCurrentLocation
-{
-//    [_locationManager stopMonitoringSignificantLocationChanges];
-    [_locationManager stopUpdatingLocation];
-    
-    [self.activityIndicator stopAnimating];
-
-}
-
-#pragma mark - CoreLocation Delegate methods
-- (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
-{
-    // if the location is older than 30s ignore
-    if (fabs([newLocation.timestamp timeIntervalSinceDate:[NSDate date]]) > 30)
-    {
-        return;
-    }
-    
-    MKCoordinateRegion cRegion = MKCoordinateRegionMakeWithDistance(newLocation.coordinate, 5000, 5000);
-    [self.mapView setRegion:cRegion animated:YES];
-    
-    _currentUserCoordinate = newLocation.coordinate;
-    
-    [self.buttonNextStep setEnabled:YES];
-    // after recieving a location, stop updating
-    //[self stopUpdatingCurrentLocation];
-    
-//    [self showCurrentLocation:newLocation];
-}
-
-- (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
-{
-    NSLog(@"%@", error);
-    
-    // stop updating
-    //[self stopUpdatingCurrentLocation];
-    
-    // since we got an error, set selected location to invalid location
-    _currentUserCoordinate = kCLLocationCoordinate2DInvalid;
-    
-    // show the error alert
-    UIAlertView *alert = [[UIAlertView alloc] init];
-    alert.title = @"Error updating location";
-    alert.message = [error localizedDescription];
-    [alert addButtonWithTitle:@"OK"];
-    [alert show];
-}
-*/
 
 #pragma mark - MapViewDelegateMethods
 - (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation
