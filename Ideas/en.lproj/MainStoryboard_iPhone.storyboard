@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2840" systemVersion="12C54" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="2Wx-9p-cgo">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2840" systemVersion="12C60" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="2Wx-9p-cgo">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1926"/>
     </dependencies>
@@ -31,32 +31,35 @@
                         <rect key="frame" x="0.0" y="20" width="320" height="411"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Office Addresses" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="bou-Kf-lR3">
-                                <rect key="frame" x="20" y="74" width="150" height="21"/>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="5-Pillars_highrez_320.png" id="mWQ-8Q-Az5">
+                                <rect key="frame" x="0.0" y="61" width="320" height="309"/>
+                            </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Office Addresses" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="bou-Kf-lR3">
+                                <rect key="frame" x="49" y="288" width="87" height="50"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Email" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="moy-ch-BGj">
-                                <rect key="frame" x="20" y="122" width="196" height="21"/>
+                                <rect key="frame" x="248" y="179" width="57" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="@Twitter" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="VUj-3P-Ybp">
-                                <rect key="frame" x="20" y="183" width="214" height="21"/>
+                                <rect key="frame" x="20" y="179" width="85" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Facebook" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="b6c-Si-hGV">
-                                <rect key="frame" x="20" y="244" width="231" height="21"/>
+                                <rect key="frame" x="123" y="97" width="82" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.50196081399917603" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="B-icon.png" id="NpE-E8-CgJ"/>
                 </viewController>
@@ -80,7 +83,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Fast Tables">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <state key="highlighted">
@@ -95,7 +98,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                 <state key="normal" title="Passbook">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <state key="highlighted">
@@ -516,25 +519,19 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" id="TDi-Dy-7a5">
-                                <rect key="frame" x="0.0" y="59" width="320" height="308"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="367"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                             </mapView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="[Drag the pin to show where you normally spend lunch. Tap save when done.]" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="NM5-E0-jfN">
-                                <rect key="frame" x="20" y="6" width="280" height="49"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" hidesWhenStopped="YES" animating="YES" style="whiteLarge" id="Waq-BY-wF6">
-                                <rect key="frame" x="270" y="18" width="37" height="37"/>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" hidesWhenStopped="YES" animating="YES" style="gray" id="Waq-BY-wF6">
+                                <rect key="frame" x="249" y="321" width="20" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </activityIndicatorView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="5Vh-Ro-vVl">
-                                <rect key="frame" x="35" y="317" width="256" height="31"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" id="5Vh-Ro-vVl">
+                                <rect key="frame" x="35" y="309" width="256" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Show Current Location">
+                                <size key="titleShadowOffset" width="1" height="0.0"/>
+                                <state key="normal" title="Request a coupon">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -542,7 +539,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="currentLocationButtonPushed:" destination="Uco-Sw-Xsr" eventType="touchUpInside" id="dJU-yd-32j"/>
+                                    <action selector="requestCouponButtonPushed:" destination="Uco-Sw-Xsr" eventType="touchUpInside" id="uH6-9x-RQC"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -550,9 +547,9 @@
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="GCY-9n-hA6">
-                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="save" id="EmX-En-NZK">
+                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="YYp-EX-HhP">
                             <connections>
-                                <action selector="buttonNextStepPushed:" destination="Uco-Sw-Xsr" id="XKp-Ju-KBc"/>
+                                <segue destination="oo0-LE-Kj4" kind="push" id="jC1-LD-G5D"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -560,14 +557,38 @@
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="activityIndicator" destination="Waq-BY-wF6" id="92B-o1-Qn8"/>
-                        <outlet property="buttonNextStep" destination="EmX-En-NZK" id="Bpm-yU-WqV"/>
-                        <outlet property="currentLocationButton" destination="5Vh-Ro-vVl" id="Dgi-QJ-cN8"/>
                         <outlet property="mapView" destination="TDi-Dy-7a5" id="iKz-HN-6KM"/>
+                        <outlet property="requestCouponButton" destination="5Vh-Ro-vVl" id="0H6-hk-p6A"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kNu-F4-kWd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2030" y="-1219"/>
+        </scene>
+        <!--Passbook Tutorial View Controller-->
+        <scene sceneID="x28-EI-sbg">
+            <objects>
+                <viewController id="oo0-LE-Kj4" customClass="BDSIPassbookTutorialViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="7Uk-O7-48Z">
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" id="tyO-1B-qwW">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="367"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Xpa-8U-J1D"/>
+                    <connections>
+                        <outlet property="webView" destination="tyO-1B-qwW" id="LxB-hr-7Eq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KfR-nq-J3N" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2456" y="-1220"/>
         </scene>
         <!--Detail View Controller - Detail-->
         <scene sceneID="24">
@@ -622,51 +643,6 @@
         <image name="B-icon.png" width="30" height="30"/>
         <image name="city-toronto-logo.png" width="150" height="100"/>
     </resources>
-    <classes>
-        <class className="BDSIDetailViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/BDSIDetailViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="detailDescriptionLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="BDSIDineSafeDetailViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/BDSIDineSafeDetailViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="addressLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="dineSafeDetailOuterShell" candidateClass="UIView"/>
-                <relationship kind="outlet" name="establishmentTypeLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="inspectionDateLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="inspectionStatusLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="inspectionTorontoLogo" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="torontoPublicHealthLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="BDSIFastDineSafeListViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/BDSIFastDineSafeListViewController.h"/>
-        </class>
-        <class className="BDSIMasterViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/BDSIMasterViewController.h"/>
-        </class>
-        <class className="BDSIPassbookViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/BDSIPassbookViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="activityIndicator" candidateClass="UIActivityIndicatorView"/>
-                <relationship kind="outlet" name="buttonNextStep" candidateClass="UIBarButtonItem"/>
-                <relationship kind="outlet" name="currentLocationButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="currentLocationLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="mapView" candidateClass="MKMapView"/>
-            </relationships>
-        </class>
-        <class className="BDSISlowDineSafeListViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/BDSISlowDineSafeListViewController.h"/>
-        </class>
-        <class className="BDSISolutionsViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/BDSISolutionsViewController.h"/>
-        </class>
-        <class className="BDSIWhitePaperViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/BDSIWhitePaperViewController.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
