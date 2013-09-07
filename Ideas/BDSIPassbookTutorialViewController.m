@@ -28,7 +28,7 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     NSString *path = [[NSBundle mainBundle] pathForResource:@"PassbookSolution" ofType:@"html"];
-    NSURL *tutorialFileUrl = [NSURL URLWithString:path];
+    NSURL *tutorialFileUrl = [NSURL fileURLWithPath:path];
     
     self.webView.delegate = self;
     
