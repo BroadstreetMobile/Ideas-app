@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2840" systemVersion="12C60" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="2Wx-9p-cgo">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12E55" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="2Wx-9p-cgo">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1926"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller - Events-->
@@ -526,12 +526,12 @@
                                 <rect key="frame" x="249" y="321" width="20" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </activityIndicatorView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" id="5Vh-Ro-vVl">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" id="5Vh-Ro-vVl">
                                 <rect key="frame" x="35" y="309" width="256" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <size key="titleShadowOffset" width="1" height="0.0"/>
-                                <state key="normal" title="Request a coupon">
+                                <state key="normal" image="Add_to_Passbook_US_UK.png">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -640,9 +640,60 @@
     </scenes>
     <resources>
         <image name="5-Pillars_highrez_320.png" width="320" height="309"/>
+        <image name="Add_to_Passbook_US_UK.png" width="120" height="40"/>
         <image name="B-icon.png" width="30" height="30"/>
         <image name="city-toronto-logo.png" width="150" height="100"/>
     </resources>
+    <classes>
+        <class className="BDSIDetailViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/BDSIDetailViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="detailDescriptionLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="BDSIDineSafeDetailViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/BDSIDineSafeDetailViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="addressLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="dineSafeDetailOuterShell" candidateClass="UIView"/>
+                <relationship kind="outlet" name="establishmentTypeLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="inspectionDateLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="inspectionStatusLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="inspectionTorontoLogo" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="torontoPublicHealthLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="BDSIFastDineSafeListViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/BDSIFastDineSafeListViewController.h"/>
+        </class>
+        <class className="BDSIMasterViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/BDSIMasterViewController.h"/>
+        </class>
+        <class className="BDSIPassbookTutorialViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/BDSIPassbookTutorialViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="webView" candidateClass="UIWebView"/>
+            </relationships>
+        </class>
+        <class className="BDSIPassbookViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/BDSIPassbookViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="requestCouponButtonPushed:" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="activityIndicator" candidateClass="UIActivityIndicatorView"/>
+                <relationship kind="outlet" name="mapView" candidateClass="MKMapView"/>
+                <relationship kind="outlet" name="requestCouponButton" candidateClass="UIButton"/>
+            </relationships>
+        </class>
+        <class className="BDSISlowDineSafeListViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/BDSISlowDineSafeListViewController.h"/>
+        </class>
+        <class className="BDSISolutionsViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/BDSISolutionsViewController.h"/>
+        </class>
+        <class className="BDSIWhitePaperViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/BDSIWhitePaperViewController.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
