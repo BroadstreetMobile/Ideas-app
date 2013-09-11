@@ -678,7 +678,6 @@
         <class className="BDSIPassbookViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/BDSIPassbookViewController.h"/>
             <relationships>
-                <relationship kind="action" name="requestCouponButtonPushed:" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="activityIndicator" candidateClass="UIActivityIndicatorView"/>
                 <relationship kind="outlet" name="mapView" candidateClass="MKMapView"/>
                 <relationship kind="outlet" name="requestCouponButton" candidateClass="UIButton"/>
