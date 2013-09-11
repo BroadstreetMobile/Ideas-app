@@ -7,6 +7,7 @@
 //
 
 #import "BDSIMapPin.h"
+#import <AddressBookUI/AddressBookUI.h>
 
 @implementation BDSIMapPin
 @synthesize placemark = _placemark;
@@ -20,7 +21,7 @@
 
 - (NSString *)title
 {
-    return self.placemark.thoroughfare;
+    return ABCreateStringWithAddressDictionary(self.placemark.addressDictionary, NO);
 }
 
 @end

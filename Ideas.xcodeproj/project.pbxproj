@@ -37,13 +37,20 @@
 		951070CD15F6A0C500E8E336 /* 5-Pillars_highrez_320.png in Resources */ = {isa = PBXBuildFile; fileRef = 951070CC15F6A0C500E8E336 /* 5-Pillars_highrez_320.png */; };
 		951070D015F6D83B00E8E336 /* B-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 951070CE15F6D83B00E8E336 /* B-icon.png */; };
 		951070D115F6D83B00E8E336 /* B-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 951070CF15F6D83B00E8E336 /* B-icon@2x.png */; };
+		952A718F17DD4A86002C6AAA /* Add_to_Passbook_US_UK.png in Resources */ = {isa = PBXBuildFile; fileRef = 952A718D17DD4A86002C6AAA /* Add_to_Passbook_US_UK.png */; };
+		952A719017DD4A86002C6AAA /* Add_to_Passbook_US_UK@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 952A718E17DD4A86002C6AAA /* Add_to_Passbook_US_UK@2x.png */; };
 		957DC7C715FF803700C66E3F /* SampleData-Whitepapers.plist in Resources */ = {isa = PBXBuildFile; fileRef = 957DC7C615FF803700C66E3F /* SampleData-Whitepapers.plist */; };
 		958D17821602493A00FAD2F8 /* InspectionReport.m in Sources */ = {isa = PBXBuildFile; fileRef = 958D17811602493A00FAD2F8 /* InspectionReport.m */; };
 		958D178416024D9200FAD2F8 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 958D178316024D9200FAD2F8 /* Default-568h@2x.png */; };
+		95AF73871623C07400DB30BF /* PassbookSolution.html in Resources */ = {isa = PBXBuildFile; fileRef = 95AF73861623C07400DB30BF /* PassbookSolution.html */; };
+		95AF738A1623C45100DB30BF /* BDSIPassbookTutorialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95AF73891623C45100DB30BF /* BDSIPassbookTutorialViewController.m */; };
+		95CCD28F161E83570094D505 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95CCD28E161E83570094D505 /* AddressBook.framework */; };
 		95CE95791612C70500631223 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95CE95781612C70500631223 /* MapKit.framework */; };
 		95CE9583161358C500631223 /* strip.png in Resources */ = {isa = PBXBuildFile; fileRef = 95CE9582161358C500631223 /* strip.png */; };
 		95DE3A7A161B48AF0092CFEC /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95DE3A79161B48AF0092CFEC /* CoreLocation.framework */; };
 		95DE3A88161B7E790092CFEC /* BDSIMapPin.m in Sources */ = {isa = PBXBuildFile; fileRef = 95DE3A87161B7E790092CFEC /* BDSIMapPin.m */; };
+		95DE3B44161D59310092CFEC /* pushpin.png in Resources */ = {isa = PBXBuildFile; fileRef = 95DE3B43161D59310092CFEC /* pushpin.png */; };
+		95DE3B4B161E02100092CFEC /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95DE3B4A161E02100092CFEC /* AddressBookUI.framework */; };
 		95EA8E341600CF43009FF5A5 /* Ideas.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 95EA8E321600CF43009FF5A5 /* Ideas.xcdatamodeld */; };
 		95EA8E371600D017009FF5A5 /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = 95EA8E361600D017009FF5A5 /* Event.m */; };
 		95EA8E3A1600D017009FF5A5 /* WhitePaper.m in Sources */ = {isa = PBXBuildFile; fileRef = 95EA8E391600D017009FF5A5 /* WhitePaper.m */; };
@@ -99,15 +106,23 @@
 		951F315115FE8AA800C26DC3 /* BDSIWhitePaperListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDSIWhitePaperListViewController.m; sourceTree = "<group>"; };
 		951F315F15FE8C3D00C26DC3 /* BDSIWhitePaperViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDSIWhitePaperViewController.h; sourceTree = "<group>"; };
 		951F316015FE8C3D00C26DC3 /* BDSIWhitePaperViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDSIWhitePaperViewController.m; sourceTree = "<group>"; };
+		952A718D17DD4A86002C6AAA /* Add_to_Passbook_US_UK.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Add_to_Passbook_US_UK.png; sourceTree = "<group>"; };
+		952A718E17DD4A86002C6AAA /* Add_to_Passbook_US_UK@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Add_to_Passbook_US_UK@2x.png"; sourceTree = "<group>"; };
 		957DC7C615FF803700C66E3F /* SampleData-Whitepapers.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "SampleData-Whitepapers.plist"; sourceTree = "<group>"; };
 		958D17801602493A00FAD2F8 /* InspectionReport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InspectionReport.h; sourceTree = "<group>"; };
 		958D17811602493A00FAD2F8 /* InspectionReport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InspectionReport.m; sourceTree = "<group>"; };
 		958D178316024D9200FAD2F8 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		95AF73861623C07400DB30BF /* PassbookSolution.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = PassbookSolution.html; sourceTree = "<group>"; };
+		95AF73881623C45100DB30BF /* BDSIPassbookTutorialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDSIPassbookTutorialViewController.h; sourceTree = "<group>"; };
+		95AF73891623C45100DB30BF /* BDSIPassbookTutorialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDSIPassbookTutorialViewController.m; sourceTree = "<group>"; };
+		95CCD28E161E83570094D505 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
 		95CE95781612C70500631223 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		95CE9582161358C500631223 /* strip.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = strip.png; sourceTree = "<group>"; };
 		95DE3A79161B48AF0092CFEC /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		95DE3A86161B7E790092CFEC /* BDSIMapPin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDSIMapPin.h; sourceTree = "<group>"; };
 		95DE3A87161B7E790092CFEC /* BDSIMapPin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDSIMapPin.m; sourceTree = "<group>"; };
+		95DE3B43161D59310092CFEC /* pushpin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pushpin.png; sourceTree = "<group>"; };
+		95DE3B4A161E02100092CFEC /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
 		95EA8E331600CF43009FF5A5 /* Ideas.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Ideas.xcdatamodel; sourceTree = "<group>"; };
 		95EA8E351600D017009FF5A5 /* Event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Event.h; sourceTree = "<group>"; };
 		95EA8E361600D017009FF5A5 /* Event.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Event.m; sourceTree = "<group>"; };
@@ -129,6 +144,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95CCD28F161E83570094D505 /* AddressBook.framework in Frameworks */,
+				95DE3B4B161E02100092CFEC /* AddressBookUI.framework in Frameworks */,
 				95DE3A7A161B48AF0092CFEC /* CoreLocation.framework in Frameworks */,
 				95CE95791612C70500631223 /* MapKit.framework in Frameworks */,
 				951070A215F69D9B00E8E336 /* UIKit.framework in Frameworks */,
@@ -165,6 +182,8 @@
 		951070A015F69D9B00E8E336 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				95CCD28E161E83570094D505 /* AddressBook.framework */,
+				95DE3B4A161E02100092CFEC /* AddressBookUI.framework */,
 				951070A115F69D9B00E8E336 /* UIKit.framework */,
 				951070A315F69D9B00E8E336 /* Foundation.framework */,
 				951070A515F69D9B00E8E336 /* CoreGraphics.framework */,
@@ -209,6 +228,9 @@
 		951070CB15F69FDF00E8E336 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				952A718D17DD4A86002C6AAA /* Add_to_Passbook_US_UK.png */,
+				952A718E17DD4A86002C6AAA /* Add_to_Passbook_US_UK@2x.png */,
+				95DE3B43161D59310092CFEC /* pushpin.png */,
 				95CE9582161358C500631223 /* strip.png */,
 				94AE0723160B98F300E1D16E /* city-toronto-logo.png */,
 				94AE071B160A567700E1D16E /* Conditional Pass.png */,
@@ -275,6 +297,9 @@
 				95EA8E441600E168009FF5A5 /* BDSIPassbookViewController.m */,
 				95DE3A86161B7E790092CFEC /* BDSIMapPin.h */,
 				95DE3A87161B7E790092CFEC /* BDSIMapPin.m */,
+				95AF73861623C07400DB30BF /* PassbookSolution.html */,
+				95AF73881623C45100DB30BF /* BDSIPassbookTutorialViewController.h */,
+				95AF73891623C45100DB30BF /* BDSIPassbookTutorialViewController.m */,
 			);
 			name = Passbook;
 			sourceTree = "<group>";
@@ -391,6 +416,10 @@
 				94AE0720160A567700E1D16E /* Pass.png in Resources */,
 				94AE0724160B98F300E1D16E /* city-toronto-logo.png in Resources */,
 				95CE9583161358C500631223 /* strip.png in Resources */,
+				95DE3B44161D59310092CFEC /* pushpin.png in Resources */,
+				95AF73871623C07400DB30BF /* PassbookSolution.html in Resources */,
+				952A718F17DD4A86002C6AAA /* Add_to_Passbook_US_UK.png in Resources */,
+				952A719017DD4A86002C6AAA /* Add_to_Passbook_US_UK@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -418,6 +447,7 @@
 				94AE0727160CF3DB00E1D16E /* BDSISlowDineSafeListViewController.m in Sources */,
 				950C55591615499800B53A18 /* BDSIScrollingTablesSelectionViewController.m in Sources */,
 				95DE3A88161B7E790092CFEC /* BDSIMapPin.m in Sources */,
+				95AF738A1623C45100DB30BF /* BDSIPassbookTutorialViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

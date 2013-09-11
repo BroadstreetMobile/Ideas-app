@@ -1,0 +1,7 @@
+Certificates required
+
+AppleWorldwideDeveloperRelationsCertificationAuthority.pem
+
+appCertificate.p12
+
+wwdr-certificate.p12

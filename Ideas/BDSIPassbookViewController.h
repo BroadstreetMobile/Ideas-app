@@ -10,10 +10,9 @@
 #import <MapKit/MapKit.h>
 #import <CoreLocation/CoreLocation.h>
 
-@interface BDSIPassbookViewController : UIViewController <MKMapViewDelegate, CLLocationManagerDelegate, UIAlertViewDelegate>
+@interface BDSIPassbookViewController : UIViewController <MKMapViewDelegate, CLLocationManagerDelegate, UIAlertViewDelegate, NSURLConnectionDelegate, UIAlertViewDelegate>
 
-@property (weak, nonatomic) IBOutlet UIBarButtonItem *buttonNextStep;
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 
-@property (weak, nonatomic) IBOutlet UIButton *currentLocationButton;
+@property (weak, nonatomic) IBOutlet UIButton *requestCouponButton;
 @end
